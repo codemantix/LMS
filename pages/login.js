@@ -31,17 +31,19 @@ export default function LogInPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center bg-gray-50 items-center min-h-screen pb-6 sm:px-6 lg:px-8">
+    <div className="flex flex-col justify-center bg-white items-center min-h-screen pb-6 sm:px-6 lg:px-8">
       {/* Background logo / brand mark  */}
        <div className='flex justity-center items-center'>
          <img
         src="/assets/logo.png"
         alt=""
+        width={1484}
+        height={1484}
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
-        <div className="py-8 px-4 shadow rounded-lg sm:px-10 backdrop-blur-sm">
+        <div className="py-8 px-4 shadow rounded-lg sm:px-10 backdrop-blur-sm bg-[#FFFFFF33">
           <div className="flex justify-center">
             <Image
               src="/assets/logo.png"

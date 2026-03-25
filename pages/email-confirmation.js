@@ -15,10 +15,12 @@ export default function EmailConfirmationPage() {
          <img
         src="/assets/logo.png"
         alt=""
+        width={1484}
+        height={1484}
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>
-      <div className="w-full max-w-xl shadow-lg px-10 pb-10 rounded-2xl backdrop-blur-sm ">
+      <div className="w-full max-w-xl bg-[#FFFFFF33] shadow-lg px-10 pb-10 rounded-2xl backdrop-blur-sm ">
         {/* Logo + brand mark */}
         <div className="flex flex-col items-center">
           <Image

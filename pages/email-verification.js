@@ -12,6 +12,8 @@ export default function VerificationSuccess() {
          <img
         src="/assets/logo.png"
         alt=""
+        width={1484}
+        height={1484}
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>

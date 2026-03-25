@@ -12,11 +12,12 @@ export default function ForgotPassword() {
          <img
         src="/assets/logo.png"
         alt=""
+        width={500}
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>
       <div className="w-full max-w-md">
-           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+           <div className="bg-[#FFFFFF33] rounded-3xl shadow-xl overflow-hidden">
         {/* Logo */}
        <div className='flex justify-center pt-10'>
             <Image
