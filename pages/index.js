@@ -1,232 +1,214 @@
-// pages/signup.tsx
-import Link from 'next/link';
-import { useState } from 'react';
-import { FcGoogle } from 'react-icons/fc';
-import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa';
+import Image from "next/image";
+import Link from "next/link";
 
-export default function RegistrationPage() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    password: '',
-    confirmPassword: '',
-  });
+const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
-
-// ...existing code...
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => {
-      const newData = { ...prev, [name]: value };
-      if (name === 'confirmPassword') {
-        setPasswordError(newData.password !== newData.confirmPassword);
-      } else if (name === 'password') {
-        if (newData.password === newData.confirmPassword) {
-          setPasswordError(false);
-        }
-      }
-      return newData;
-    });
-  };
-// ...existing code...
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      setPasswordError(true);
-      return;
-    }
-    console.log('Form submitted:', formData);
-    // → here you would normally send data to backend / auth service
-  };
-
+export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Create Your Account
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          Please enter your correct details
-        </p>
-      </div>
+    <div className="min-h-screen flex flex-col bg-white overflow-hidden font-inter">
+      {/* ===== HERO SECTION ===== */}
+      <main className="flex-1 relative">
+        <section className="flex flex-col lg:flex-row min-h-[calc(100vh-64px)]">
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            {/* Full Name */}
-            <div>
-              <input
-                id="fullName"
-                name="fullName"
-                type="text"
-                required
-                value={formData.fullName}
-                onChange={handleChange}
-                className="appearance-none block w-full px-3 py-2 rounded-md shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm hover:scale-[1.02] transition duration-300"
-                placeholder="Enter full name"
-              />
-            </div>
+          {/* ===== Left Panel with Background Image ===== */}
+          <div className="relative w-full lg:w-[55%] text-white px-8 md:px-14 lg:px-16 pt-6 pb-14 lg:pb-16 flex flex-col rounded-br-[80px] lg:rounded-br-[100px] overflow-hidden">
+            {/* Background Image */}
+            <Image
+              src={`${ASSET_PATH}/Rectangle 52.png`}
+              alt=""
+              fill
+              className="object-cover -z-0"
+              priority
+            />
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 " />
 
-            {/* Email */}
-            <div>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="appearance-none block w-full px-3 py-2 rounded-md shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm hover:scale-[1.02] transition duration-300"
-                placeholder="Enter Email"
-              />
-            </div>
-
-            {/* Phone Number */}
-            <div>
-              <input
-                id="phoneNumber"
-                name="phoneNumber"
-                type="tel"
-                required
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className="appearance-none block w-full px-3 py-2 rounded-md shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm hover:scale-[1.02] transition duration-300"
-                placeholder="Enter Phone Number"
-              />
-            </div>
-
-            {/* Password */}
-            <div className="relative">
-              <input
-                id="password"
-                name="password"
-                type={showPassword ? 'text' : 'password'}
-                required
-                value={formData.password}
-                onChange={handleChange}
-                className="appearance-none block w-full px-3 py-2 rounded-md shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10 hover:scale-[1.02] transition duration-300"
-                placeholder="Enter Password"
-              />
-              <button
-                type="button"
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? 'Hide password' : 'Show password'}
-              >
-                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
-              </button>
-            </div>
-
-            {/* Confirm Password */}
-            <div className="relative">
-              <input
-                id="confirmPassword"
-                name="confirmPassword"
-                type={showConfirmPassword ? 'text' : 'password'}
-                required
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className={`appearance-none block w-full px-3 py-2 border ${
-                  passwordError ? 'border-red-500' : 'border-white'
-                } rounded-md shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10 hover:scale-[1.02] transition duration-300`}
-                placeholder="Confirm Password"
-              />
-              <button
-                type="button"
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
-              >
-                {showConfirmPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
-              </button>
-            </div>
-
-            {passwordError && (
-              <p className="text-red-600 text-[0.8rem] mt-0">
-                Passwords don't match. <span className='text-[#35a2ff]'>Try again.</span>
-              </p>
-            )}
-
-            {/* Terms checkbox */}
-            <div className="flex items-center">
-              <input
-                id="terms"
-                name="terms"
-                type="checkbox"
-                required
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              />
-              <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
-                By signing up, you agree to the{' '}
-                <a href="#" className="text-[#35a2ff] hover:text-[#1e90ff]">
-                  Terms of Service
-                </a>{' '}
-                and{' '}
-                <a href="#" className="text-[#35a2ff] hover:text-[#1e90ff]">
-                  Privacy Policy
-                </a>
-              </label>
-            </div>
-
-            {/* Submit Button */}
-            <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-[1.02] transition duration-300"
-              >
-                Sign Up
-              </button>
-            </div>
-          </form>
-
-          {/* Divider */}
-          <div className="mt-6">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+            {/* Content on top of background */}
+            <div className="relative z-10 flex flex-col flex-1">
+              {/* Logo inside panel - top left (White Logo) */}
+              <div className="animate-fade-in flex items-center gap-2.5 mb-12 lg:mb-16">
+                <Image
+                  src={`${ASSET_PATH}/White Logo.png`}
+                  alt="Codemantix Collective"
+                  width={192}
+                  height={60}
+                  className="h-[50px] w-auto animate-gentle-bounce"
+                />
               </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">or</span>
+
+              {/* Heading - Montserrat 50px bold 150% line-height */}
+              <h1 className="animate-fade-in-left font-montserrat text-[50px] font-bold leading-[150%] mb-6">
+                Welcome To<br />Codemantix Collective
+              </h1>
+
+              {/* Subtitle */}
+              <p className="animate-fade-in-left delay-200 text-[15px] md:text-base text-white/70 mb-10 max-w-[380px] leading-relaxed">
+                The next generation Learning Management System designed to accelerate your growth. Your journey to mastery starts here.
+              </p>
+
+              {/* Feature Cards */}
+              <div className="space-y-4 mb-10">
+                {/* Card 1 - Personalized Learning */}
+                <div className="animate-fade-in-up delay-300 bg-white rounded-2xl p-5 max-w-[400px] hover:shadow-lg transition-all duration-300 cursor-default animate-pulse-glow">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 rounded-lg p-[12px]" style={{ width: 44, height: 50.25, borderRadius: 8 }}>
+                      <Image
+                        src={`${ASSET_PATH}/Icon.png`}
+                        alt="Personalized Learning"
+                        width={44}
+                        height={50}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-montserrat font-bold text-[15px] text-[#1E3A8A] mb-1">Personalized Learning</h3>
+                      <p className="text-[13px] text-[#1E3A8A] leading-relaxed">
+                        Curated paths tailored to your unique goals, skill level, and individual learning pace.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card 2 - Expert-Led Courses */}
+                <div className="animate-fade-in-up delay-500 bg-white rounded-2xl p-5 max-w-[400px] hover:shadow-lg transition-all duration-300 cursor-default animate-pulse-glow loop-delay-400">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 rounded-lg p-[12px]" style={{ width: 44, height: 50.25, borderRadius: 8 }}>
+                      <Image
+                        src={`${ASSET_PATH}/Overlay.png`}
+                        alt="Expert-Led Courses"
+                        width={44}
+                        height={50}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-montserrat font-bold text-[15px] text-[#1E3A8A] mb-1">Expert-Led Courses</h3>
+                      <p className="text-[13px] text-[#1E3A8A] leading-relaxed">
+                        Learn directly from industry giants and top-tier academic experts around the globe.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="animate-fade-in-up delay-700 flex items-center gap-4">
+                <Link
+                  href="/onboarding/step2"
+                  className="px-8 py-3 bg-white text-[#1a1a6e] rounded-full text-[13px] font-bold hover:bg-gray-100 hover:shadow-lg transition-all duration-300"
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="#"
+                  className="px-8 py-3 border-2 border-white text-white rounded-full text-[13px] font-bold hover:bg-white hover:text-[#1a1a6e] transition-all duration-300"
+                >
+                  Browse Courses
+                </Link>
               </div>
             </div>
           </div>
 
-                    {/* Social Buttons */}
-                    <div className="mt-6 space-y-3">
-                      <button
-                        type="button"
-                        className="w-full inline-flex justify-center py-2 px-4 border border-blue-800 rounded-3xl shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transform hover:scale-[1.02] transition duration-300"
-                      >
-                        <FcGoogle size={20} />
-                        <span className="ml-2 text-blue-800">Sign up with Google</span>
-                      </button>
-                      <button
-                        type="button"
-                        className="w-full inline-flex justify-center py-2 px-4 border border-blue-800 rounded-3xl shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transform hover:scale-[1.02] transition duration-300"
-                      >
-                        <FaApple size={20} className='text-black' />
-                        <span className="ml-2 text-blue-800">Sign up with Apple</span>
-                      </button>
+          {/* ===== Right White Panel ===== */}
+          <div className="w-full lg:w-[45%] flex flex-col pt-6 pb-10 lg:pb-0 px-8 lg:px-10">
+
+            {/* Sign Up / Login buttons - top right */}
+            <div className="animate-fade-in flex items-center justify-end gap-3 mb-8 lg:mb-0">
+              <Link
+                href="/onboarding/step2"
+                className="px-6 py-2.5 bg-[#1E3A8A] text-white rounded-full text-[13px] font-semibold hover:bg-[#14145a] transition-all duration-300 hover:shadow-lg"
+              >
+                Sign Up
+              </Link>
+              <Link
+                href="/login"
+                className="px-6 py-2.5 border-2 border-[#1E3A8A] text-[#1E3A8A] rounded-full text-[13px] font-semibold hover:bg-[#1E3A8A] hover:text-white transition-all duration-300"
+              >
+                Login
+              </Link>
+            </div>
+
+            {/* Dashboard Image - centered */}
+            <div className="flex-1 flex flex-col items-center justify-center ">
+              <div className="animate-scale-in delay-400 relative w-[599px] h-[553px] animate-float">
+                <Image
+                  src={`${ASSET_PATH}/onboarding first image.png`}
+                  alt="Learning Dashboard Preview"
+                  width={593}
+                  height={546}
+                  className="w-full h-auto drop-shadow-xl"
+                  priority
+                />
+
+                {/* Student Avatar + 10k badge - overlaid on image bottom-left */}
+                <div className="animate-fade-in-up delay-600 absolute top-[398px] left-[75px] flex items-center gap-4 bg-white rounded-2xl p-4 shadow-md w-[240px] h-[67px] max-w-[230px] border border-gray-100 opacity-100 animate-gentle-bounce loop-delay-600">
+                  <div className="flex items-center -space-x-2">
+                    <Image
+                      src={`${ASSET_PATH}/Student avatar.png`}
+                      alt="Student"
+                      width={36}
+                      height={36}
+					  left={6}
+                      className="rounded-full border-2 border-white"
+                    />
+                    <Image
+                      src={`${ASSET_PATH}/Student avatar.png`}
+                      alt="Student"
+                      width={36}
+                      height={36}
+                      className="rounded-full border-2 border-white"
+                    />
+                    <div className="w-9 h-9 rounded-full bg-[#1E3A8A] flex items-center justify-center text-[10px] text-white font-bold border-2 border-white">
+                      +10k
                     </div>
-          
-                    {/* Sign In Link */}
-                    <p className="mt-6 text-center text-sm text-gray-600">
-                      Already have an account?{' '}
-                     <Link
-                        href="/signin"
-                        className="text-[#35a2ff] hover:text-[#1e90ff] font-medium"
-                        >
-                          Sign In
-                        </Link>
-                    </p>
                   </div>
+                  <span className="text-xs text-gray-500 leading-tight">
+                    Join 10,000+<br />active learners
+                  </span>
                 </div>
               </div>
-            );
-          }
+
+              {/* Step Indicator - Bottom Right */}
+              <div className="animate-fade-in-up delay-800 mt-8 lg:mt-12 flex flex-col items-end w-full max-w-[480px]">
+                <p className="font-montserrat text-[11px] font-extrabold text-[#1E3A8A] tracking-[0.15em] mb-1.5 uppercase">
+                  Step 1 of 3
+                </p>
+                <p className="text-[11px] text-[#1E3A8A] mb-3">
+                  Personalizing your learning journey...
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-12 h-2 rounded-full bg-[#1E3A8A] transition-all duration-500"></div>
+                  <div className="w-12 h-2 rounded-full bg-gray-200"></div>
+                  <div className="w-12 h-2 rounded-full bg-gray-200"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* ===== FOOTER ===== */}
+      <footer className="bg-white border-t border-gray-200 px-8 md:px-14 py-5 font-inter">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <Image
+              src={`${ASSET_PATH}/codemantix logo png 3.png`}
+              alt="Codemantix Collective"
+              width={140}
+              height={44}
+              className="h-9 w-auto"
+            />
+            <span className="text-[18px] text-[#1E3A8A] ml-4 font-normal">
+              All Rights Reserved 2026
+            </span>
+          </div>
+          <div className="flex items-center gap-8 text-[13px] text-[#1E3A8A] font-medium">
+            <Link href="#" className="hover:text-[#1E3A8A] transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-[#1E3A8A] transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-[#1E3A8A] transition-colors">Contact Us</Link>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

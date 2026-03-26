@@ -9,7 +9,11 @@ export default {
 		extend: {
 			colors: {},
 			fontFamily: {
+				inter: ["Inter", "sans-serif"],
+				montserrat: ["Montserrat", "sans-serif"],
 				saira: ["Saira Semi Condensed", "sans-serif"],
+				publicSans: ["Public Sans", "sans-serif"],
+
 			},
 			// media quries
 			screens: {
