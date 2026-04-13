@@ -38,9 +38,9 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] relative overflow-hidden px-4">
       {/* Background logo watermark */}
-      <div className="absolute pointer-events-none" style={{ width: 1480, height: 1480, top: '50%', left: -100, transform: 'translateY(-50%)', opacity: 0.06 }}>
+      <div className="absolute pointer-events-none hidden md:block" style={{ width: 1480, height: 1480, top: '50%', left: -100, transform: 'translateY(-50%)', opacity: 0.06 }}>
         <Image
           src={`${ASSET_PATH}/codemantix logo png 3.png`}
           alt=""
@@ -51,18 +51,16 @@ export default function SignUp() {
       </div>
 
       <div
-        className="relative z-10 flex flex-col items-center"
+        className="relative z-10 flex flex-col items-center w-full max-w-[520px]"
         style={{
           borderRadius: 20,
-          padding: '40px',
+          padding: '24px',
           background: 'rgba(255, 255, 255, 0.92)',
           boxShadow: '0px 7px 15px 0px #00000012',
           backdropFilter: 'blur(30px)',
           marginBottom: 60,
-          top: '32.5px',
-          left: '310px',
-          gap: '40px',
-          transform: 'translateX(-50%)',
+          marginTop: 32,
+          gap: '24px',
         }}
       >
       <div className="w-full" style={{ maxWidth: 460 }}>

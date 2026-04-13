@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function VerificationSuccess() {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-6">
-      <div className=" p-10 md:p-14 max-w-2xl w-full text-center">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 md:p-6">
+      <div className="p-6 md:p-10 md:p-14 max-w-2xl w-full text-center">
        <div className='flex justity-center items-center'>
          <img
         src="/assets/logo.png"

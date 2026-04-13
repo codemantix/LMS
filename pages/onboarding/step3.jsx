@@ -76,7 +76,7 @@ export default function Step3() {
     <div className="min-h-screen flex flex-col bg-white font-inter">
       <Navbar variant="onboarding" />
 
-      <main className="flex-1 flex flex-col items-center px-6 py-8">
+      <main className="flex-1 flex flex-col items-center px-4 md:px-6 py-8">
         {/* Step indicator header */}
         <div className="animate-fade-in">
           <p className="text-xs font-bold text-[#1E3A8A] tracking-wider mb-3 text-center">
@@ -120,29 +120,29 @@ export default function Step3() {
         </div>
 
         {/* Course Grid */}
-        <div className="w-[1052px] h-[1100px] grid grid-cols-1 md:grid-cols-2 gap-[5.3rem] p-12 mb-40 relative">
+        <div className="w-full max-w-[1052px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[5.3rem] p-4 md:p-12 mb-16 relative">
           {filteredCourses.map((course, index) => (
             <div
               key={index}
-              className="animate-fade-in-up w-[510px] h-[536px] rounded-[20px] p-[12px] opacity-100 shadow-lg col-span-1 row-span-1 border-2 border-solid border-[#ffffff]/60 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 -mt-8"
+              className="animate-fade-in-up w-full max-w-[510px] mx-auto rounded-[20px] p-[12px] opacity-100 shadow-lg col-span-1 row-span-1 border-2 border-solid border-[#ffffff]/60 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               {/* Course Image */}
-              <div className="relative  bg-gray-50 overflow-hidden rounded-20px">
+              <div className="relative bg-gray-50 overflow-hidden rounded-20px">
                 <Image
                   src={course.image}
                   alt={course.title}
                   width={486}
                   height={328}
-                  className=""
+                  className="w-full h-auto"
                 />
               </div>
 
               {/* Course Info */}
-              <div className=" w-[486px] h-[168px] right-[16px] bottom-[16px] gap-[16px] left-[16px] absolute ">
+              <div className="w-full p-4 relative">
                 {/* Title row with stars */}
                 <div className="flex items-start justify-between mb-1">
-                  <div className="flex items-center gap-3 w-[462px] ">
+                  <div className="flex items-center gap-3 w-full">
                     <div className="flex flex-col items-start gap-3 w-[50px] ">
                       <Image
                         src={course.progress === 69 ? `${ASSET_PATH}/progress bar.bar.png` : `${ASSET_PATH}/progress bar.png`}
@@ -155,12 +155,12 @@ export default function Step3() {
                         {course.progress}%
                       </p>
                     </div>
-                    <div className=" gap-12 w-[396px] h-[40px] -mt-8">
+                    <div className="gap-12 flex-1 -mt-8">
                       <div>
-                       <h3 className="text-[20px] font-bold font-montserrat text-[#343131] leading-28">
+                       <h3 className="text-[16px] md:text-[20px] font-bold font-montserrat text-[#343131] leading-28">
                          {course.title}
                        </h3>
-                       <div className="flex items-center gap-2 mt-1 w-[396px] h-[18px] justify-between">
+                       <div className="flex items-center gap-2 mt-1 w-full justify-between">
                           <p className="text-xs text-[#64748B]">{course.author}</p>
                           <StarRating />
                        </div>
@@ -176,7 +176,7 @@ export default function Step3() {
                 {/* Author */}
 
                 {/* Continue Learning button */}
-                <button className="w-[454px] h-[56px] border-1 mt-[8px] border-[#1E3A8A] rounded-full bg-[#1E3A8A] text-white text-[16px] tracking-[0.3px] font-inter hover:transition-all duration-300 hover:shadow-md">
+                <button className="w-full h-[56px] border-1 mt-[8px] border-[#1E3A8A] rounded-full bg-[#1E3A8A] text-white text-[14px] md:text-[16px] tracking-[0.3px] font-inter hover:transition-all duration-300 hover:shadow-md">
                   Continue Learning
                 </button>
               </div>
@@ -185,7 +185,7 @@ export default function Step3() {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between w-[413px] h-[56px] opacity-100 absolute top-[1602px] left-[925px]">
+        <div className="flex items-center justify-between w-full max-w-[413px] mt-8 mb-8">
           <button
             onClick={() => router.back()}
             className="text-sm text-gray-500 font-medium hover:text-gray-700 flex items-center gap-1"

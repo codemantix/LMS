@@ -9,7 +9,7 @@ const publicSans = Public_Sans({ subsets: ['latin'] });
 
 export default function EmailConfirmationPage() {
   return (
-    <div className="min-h-screen bg-white text-black flex items-center justify-center p-6">
+    <div className="min-h-screen bg-white text-black flex items-center justify-center p-4 md:p-6">
        {/* Background logo / brand mark  */}
        <div className='flex justity-center items-center'>
          <img
@@ -20,7 +20,7 @@ export default function EmailConfirmationPage() {
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>
-      <div className="w-full max-w-xl bg-[#FFFFFF33] shadow-lg px-10 pb-10 rounded-2xl backdrop-blur-sm ">
+      <div className="w-full max-w-xl bg-[#FFFFFF33] shadow-lg px-4 md:px-10 pb-10 rounded-2xl backdrop-blur-sm ">
         {/* Logo + brand mark */}
         <div className="flex flex-col items-center">
           <Image
@@ -59,20 +59,20 @@ export default function EmailConfirmationPage() {
          </div>
 
           {/* 6-digit code inputs */}
-          <div className="grid grid-cols-6 gap-3 mb-8">
+          <div className="grid grid-cols-6 gap-2 md:gap-3 mb-8">
             {Array.from({ length: 6 }).map((_, i) => (
               <input
                 key={i}
                 type="text"
                 maxLength={1}
-                className="h-[79px] text-center text-2xl font-bold border-[1px] border-[#9F9B9B5C] rounded-lg focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all"
+                className="h-[56px] md:h-[79px] text-center text-xl md:text-2xl font-bold border-[1px] border-[#9F9B9B5C] rounded-lg focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-all"
                 autoFocus={i === 0}
               />
             ))}
           </div>
 
           {/* Resend link */}
-          <div className="flex flex-row justify-center items-start gap-2 ${inter.className}text-center mb-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 ${inter.className}text-center mb-8">
             <p className="text-[#000000B2] text-[18px] font-medium leading-[28px] mb-2">
               Didn't get your code?
             </p>

@@ -18,7 +18,7 @@ export default function EmailConfirmedPage() {
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>
-      <div className="w-full max-w-xl text-center md:p-4 md:pb-10 rounded-2xl bg-[#FFFFFF33] shadow-md shadow-black/20 backdrop-blur-sm">
+      <div className="w-full max-w-xl text-center p-4 md:p-4 pb-10 md:pb-10 rounded-2xl bg-[#FFFFFF33] shadow-md shadow-black/20 backdrop-blur-sm">
         {/* Logo / Brand mark */}
          <div className='flex justify-center items-center flex-col'>
          <Image
@@ -45,7 +45,7 @@ export default function EmailConfirmedPage() {
          </div>
 
           {/* Congratulations message */}
-          <div className="space-y-4 mb-4 w-[720px] max-w-sm mx-auto">
+          <div className="space-y-4 mb-4 w-full max-w-sm mx-auto px-4">
             <p className={`text-[#000000] font-${inter.className} font-normal text-[18px] leading-[28px]`}>
               Congratulations! <br/>
               Your email has been confirmed.

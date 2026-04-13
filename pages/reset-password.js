@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function ForgotPassword() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className="min-h-screen flex items-center justify-center p-4 md:p-6">
          {/* Background logo / brand mark  */}
        <div className='flex justity-center items-center'>
          <img
@@ -29,7 +29,7 @@ export default function ForgotPassword() {
        </div>
 
         {/* Main Card */}
-          <div className="px-8 pb-12">
+          <div className="px-4 md:px-8 pb-12">
             <h1 className="text-[30px] leading-[36px] font-bold text-center text-gray-900 mb-2">
               Reset Your Password
             </h1>

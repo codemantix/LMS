@@ -31,7 +31,7 @@ export default function LogInPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center bg-white items-center min-h-screen pb-6 sm:px-6 lg:px-8">
+    <div className="flex flex-col justify-center bg-white items-center min-h-screen px-4 pb-6 sm:px-6 lg:px-8">
       {/* Background logo / brand mark  */}
        <div className='flex justity-center items-center'>
          <img
@@ -42,8 +42,8 @@ export default function LogInPage() {
         className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
       />
        </div>
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
-        <div className="py-8 px-4 shadow rounded-lg sm:px-10 backdrop-blur-sm bg-[#FFFFFF33">
+      <div className="mt-8 w-full sm:mx-auto sm:max-w-xl">
+        <div className="py-8 px-4 shadow rounded-lg sm:px-10 backdrop-blur-sm bg-[#FFFFFF33]">
           <div className="flex justify-center">
             <Image
               src="/assets/logo.png"
@@ -54,7 +54,7 @@ export default function LogInPage() {
           </div>
 
           <div className="text-center mb-8">
-            <h1 className="text-[30px] font-bold leading-[36px]">Welcome Back!</h1>
+            <h1 className="text-[24px] sm:text-[30px] font-bold leading-[32px] sm:leading-[36px]">Welcome Back!</h1>
             <p className={`${inter.className} font-regular text-[18px] leading-[28px] text-[#000000B2]`}>
               Please Login to your account
             </p>

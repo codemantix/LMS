@@ -42,7 +42,7 @@ export default function Step2() {
     <div className="min-h-screen flex flex-col bg-white font-inter">
       <Navbar variant="onboarding" />
 
-      <main className="flex-1 flex flex-col items-center px-6 py-8 w-[870px] mx-auto">
+      <main className="flex-1 flex flex-col items-center px-4 md:px-6 py-8 w-full max-w-[870px] mx-auto">
         {/* Step indicator header */}
         <div className="animate-fade-in">
           <p className="text-xs font-bold text-[#1E3A8A] tracking-wider mb-3 text-center">
@@ -102,20 +102,20 @@ export default function Step2() {
         </div>
 
         {/* Learning Goal */}
-        <div className="animate-fade-in-up delay-500 w-full max-w-2xl mb-12 w-[870px] h-[172px] gap-6 mx-auto">
+        <div className="animate-fade-in-up delay-500 w-full max-w-2xl mb-12 mx-auto">
           <h2 className="text-base font-semibold text-[#1a1a2e] mb-4 text-center flex items-center justify-center gap-2">
             <svg className="w-5 h-5 text-[#1a1a6e] animate-wiggle loop-delay-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Set your weekly learning goal
           </h2>
-          <div className="flex justify-center gap-4 w-full">
+          <div className="grid grid-cols-2 md:flex md:justify-center gap-3 md:gap-4 w-full">
             {learningGoals.map((goal, index) => (
               <button
                 key={goal.tag}
                 onClick={() => setSelectedGoal(index)}
                 style={{
-                  width: 205.5,
+                  minWidth: 0,
                   height: 120,
                   opacity: 1,
                   borderRadius: "12px",
@@ -147,7 +147,7 @@ export default function Step2() {
         </div>
 
         {/* Navigation */}
-       <div className="flex items-center justify-between w-[413px] h-[56px] opacity-100 absolute top-[678px] left-[925px]">
+       <div className="flex items-center justify-between w-full max-w-[413px] mt-8 mb-8">
           <button
             onClick={() => router.back()}
             className="text-sm text-gray-500 font-medium hover:text-gray-700 flex items-center gap-1"

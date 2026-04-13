@@ -13,13 +13,13 @@ export default function Complete() {
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar variant="onboarding" />
 
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-12">
+      <main className="flex-1 flex flex-col items-center justify-center px-4 md:px-6 py-12">
         {/* Success Icon Area */}
         <div className="relative mb-8 animate-fade-in hover:  animate-fade-in-up delay-500 animate-gentle-bounce loop-delay-800"
           
         >
           <div
-            className="w-[404px] h-[404px] bg-gray-50 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden"
+            className="w-[280px] h-[280px] md:w-[404px] md:h-[404px] bg-gray-50 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden"
             style={{ boxShadow: '0px 25px 50px -12px #1E3A8A40' }}
           >
             {/* Background overlay */}
@@ -68,16 +68,16 @@ export default function Complete() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-[50px] w-[430px] h-[75px] font-bold text-[#0F172A] leading-[150%] mb-4 text-center animate-fade-in-up font-montserrat">
+        <h1 className="text-[28px] md:text-[50px] w-full max-w-[430px] font-bold text-[#0F172A] leading-[140%] md:leading-[150%] mb-4 text-center animate-fade-in-up font-montserrat">
           You&apos;re All Set!
         </h1>
-        <p className="text-[20px] leading-28 font-Public Sans font-normal text-[#475569] text-center mb-8 max-w-sm leading-relaxed animate-fade-in-up delay-200">
+        <p className="text-[16px] md:text-[20px] leading-28 font-Public Sans font-normal text-[#475569] text-center mb-8 max-w-sm leading-relaxed animate-fade-in-up delay-200 px-2">
           Welcome to Codemantix Collective.<br />
           Your configuration is complete and your learning journey starts right now.
         </p>
 
         {/* Quick Tip Card */}
-        <div className="w-full max-w-[576px] h-[128px] bg-[#1E3A8A0D] border border-gray-100 rounded-xl p-6 mt-7 mb-8 animate-fade-in-up delay-300 animate-pulse-glow">
+        <div className="w-full max-w-[576px] bg-[#1E3A8A0D] border border-gray-100 rounded-xl p-4 md:p-6 mt-7 mb-8 animate-fade-in-up delay-300 animate-pulse-glow">
           <div className="flex items-center gap-4">
             <div className="w-[50px] h-[50px] rounded-xl flex items-center justify-center flex-shrink-0">
               <Image
@@ -123,7 +123,7 @@ export default function Complete() {
         </p>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between w-[413px] h-[56px] opacity-100 absolute top-[1203px] left-[925px]  mb-40">
+        <div className="flex items-center justify-between w-full max-w-[413px] mt-8 mb-8">
           <button
             onClick={() => router.back()}
             className="text-sm text-gray-500 font-medium hover:text-gray-700 flex items-center gap-1"

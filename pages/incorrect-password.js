@@ -8,7 +8,7 @@ const public_sans = Public_Sans({ subsets: ['latin'] });
 
 export default function ResetPassword() {
   return (
-    <div className="min-h-screen bg-[#FFFFFF] flex items-center justify-center p-6">
+    <div className="min-h-screen bg-[#FFFFFF] flex items-center justify-center p-4 md:p-6">
            {/* Background logo / brand mark  */}
        <div className='flex justity-center items-center'>
          <img
@@ -20,7 +20,7 @@ export default function ResetPassword() {
       />
        </div>
       <div className="w-full max-w-xl">
-        <div className="bg-[#FFFFFF33] rounded-3xl shadow-xl p-10 pt-0 border border-gray-100">
+        <div className="bg-[#FFFFFF33] rounded-3xl shadow-xl p-5 md:p-10 pt-0 border border-gray-100">
         {/* Logo */}
         <div className='flex justify-center'>
             <Image

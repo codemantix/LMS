@@ -20,7 +20,7 @@ function Logo({ width = 140, height = 40 }) {
 export default function Navbar({ variant = "landing" }) {
   if (variant === "onboarding") {
     return (
-      <nav className="flex items-center justify-between px-8 md:px-14 py-4 bg-white border-b border-gray-100 font-inter">
+      <nav className="flex items-center justify-between px-4 md:px-14 py-4 bg-white border-b border-gray-100 font-inter">
         <Logo />
         <div className="flex items-center gap-4">
           <button className="text-sm text-[#64748B] hover:text-gray-700 font-medium">
@@ -39,7 +39,7 @@ export default function Navbar({ variant = "landing" }) {
 
   // Landing variant
   return (
-    <nav className="flex items-center justify-between px-8 md:px-14 py-4 bg-white font-inter">
+    <nav className="flex items-center justify-between px-4 md:px-14 py-4 bg-white font-inter">
       <Logo />
       <div className="flex items-center gap-3">
         <Link

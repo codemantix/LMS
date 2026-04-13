@@ -11,7 +11,7 @@ export default function Home() {
         <section className="flex flex-col lg:flex-row min-h-[calc(100vh-64px)]">
 
           {/* ===== Left Panel with Background Image ===== */}
-          <div className="relative w-full lg:w-[55%] text-white px-8 md:px-14 lg:px-16 pt-6 pb-14 lg:pb-16 flex flex-col rounded-br-[80px] lg:rounded-br-[100px] overflow-hidden">
+          <div className="relative w-full lg:w-[55%] text-white px-5 md:px-14 lg:px-16 pt-6 pb-14 lg:pb-16 flex flex-col rounded-br-[40px] md:rounded-br-[80px] lg:rounded-br-[100px] overflow-hidden">
             {/* Background Image */}
             <Image
               src={`${ASSET_PATH}/Rectangle 52.png`}
@@ -37,7 +37,7 @@ export default function Home() {
               </div>
 
               {/* Heading - Montserrat 50px bold 150% line-height */}
-              <h1 className="animate-fade-in-left font-montserrat text-[50px] font-bold leading-[150%] mb-6">
+              <h1 className="animate-fade-in-left font-montserrat text-[28px] md:text-[40px] lg:text-[50px] font-bold leading-[140%] lg:leading-[150%] mb-6">
                 Welcome To<br />Codemantix Collective
               </h1>
 
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
 
           {/* ===== Right White Panel ===== */}
-          <div className="w-full lg:w-[45%] flex flex-col pt-6 pb-10 lg:pb-0 px-8 lg:px-10">
+          <div className="w-full lg:w-[45%] flex flex-col pt-6 pb-10 lg:pb-0 px-5 md:px-8 lg:px-10">
 
             {/* Sign Up / Login buttons - top right */}
             <div className="animate-fade-in flex items-center justify-end gap-3 mb-8 lg:mb-0">
@@ -130,7 +130,7 @@ export default function Home() {
 
             {/* Dashboard Image - centered */}
             <div className="flex-1 flex flex-col items-center justify-center ">
-              <div className="animate-scale-in delay-400 relative w-[599px] h-[553px] animate-float">
+              <div className="animate-scale-in delay-400 relative w-full max-w-[599px] h-auto animate-float">
                 <Image
                   src={`${ASSET_PATH}/onboarding first image.png`}
                   alt="Learning Dashboard Preview"
@@ -141,7 +141,7 @@ export default function Home() {
                 />
 
                 {/* Student Avatar + 10k badge - overlaid on image bottom-left */}
-                <div className="animate-fade-in-up delay-600 absolute top-[398px] left-[75px] flex items-center gap-4 bg-white rounded-2xl p-4 shadow-md w-[240px] h-[67px] max-w-[230px] border border-gray-100 opacity-100 animate-gentle-bounce loop-delay-600">
+                <div className="animate-fade-in-up delay-600 absolute bottom-4 left-4 md:top-[398px] md:left-[75px] md:bottom-auto flex items-center gap-4 bg-white rounded-2xl p-3 md:p-4 shadow-md w-[200px] md:w-[240px] h-auto md:h-[67px] max-w-[230px] border border-gray-100 opacity-100 animate-gentle-bounce loop-delay-600">
                   <div className="flex items-center -space-x-2">
                     <Image
                       src={`${ASSET_PATH}/Student avatar.png`}
@@ -188,9 +188,9 @@ export default function Home() {
       </main>
 
       {/* ===== FOOTER ===== */}
-      <footer className="bg-white border-t border-gray-200 px-8 md:px-14 py-5 font-inter">
+      <footer className="bg-white border-t border-gray-200 px-4 md:px-14 py-5 font-inter">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
             <Image
               src={`${ASSET_PATH}/codemantix logo png 3.png`}
               alt="Codemantix Collective"
@@ -198,11 +198,11 @@ export default function Home() {
               height={44}
               className="h-9 w-auto"
             />
-            <span className="text-[18px] text-[#1E3A8A] ml-4 font-normal">
+            <span className="text-[14px] md:text-[18px] text-[#1E3A8A] ml-0 sm:ml-4 font-normal">
               All Rights Reserved 2026
             </span>
           </div>
-          <div className="flex items-center gap-8 text-[13px] text-[#1E3A8A] font-medium">
+          <div className="flex items-center gap-4 md:gap-8 text-[12px] md:text-[13px] text-[#1E3A8A] font-medium">
             <Link href="#" className="hover:text-[#1E3A8A] transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-[#1E3A8A] transition-colors">Terms of Service</Link>
             <Link href="#" className="hover:text-[#1E3A8A] transition-colors">Contact Us</Link>
