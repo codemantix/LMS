@@ -1,0 +1,61 @@
+.page {
+  @apply min-h-screen bg-white flex items-center justify-center p-6;
+}
+
+.bgLogoWrapper {
+  @apply flex justify-center items-center;
+}
+
+.bgLogo {
+  @apply pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen;
+  opacity: 6%;
+}
+
+.card {
+  @apply w-full max-w-xl text-center p-4 pb-10 rounded-2xl backdrop-blur-sm;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .card {
+    @apply p-4 pb-10;
+  }
+}
+
+.logoSection {
+  @apply flex justify-center items-center flex-col;
+}
+
+.title {
+  @apply font-bold text-black mb-4;
+  font-size: 30px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    @apply text-4xl;
+  }
+}
+
+.thumbsUp {
+  @apply flex justify-center;
+}
+
+.message {
+  @apply space-y-4 mb-4 w-full max-w-sm mx-auto px-4;
+}
+
+.messageText {
+  @apply font-normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.backLink {
+  @apply inline-flex items-center gap-2 px-8 py-4 font-normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0088FF;
+}

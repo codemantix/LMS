@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StepIndicator from "@/components/StepIndicator";
+import styles from "../../styles/Step3.module.css";
 
 const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
@@ -48,7 +49,7 @@ const courses = [
 
 function StarRating() {
   return (
-    <div className="flex gap-0.5">
+    <div className={styles.starRating}>
       {[1, 2, 3].map((star) => (
         <Image
           key={star}
@@ -56,7 +57,7 @@ function StarRating() {
           alt="star"
           width={18}
           height={18}
-          className="opacity-3"
+          className={styles.starIcon}
         />
       ))}
     </div>
@@ -73,37 +74,33 @@ export default function Step3() {
       : courses.filter((c) => c.category === activeCategory);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white font-inter">
+    <div className={styles.page}>
       <Navbar variant="onboarding" />
 
-      <main className="flex-1 flex flex-col items-center px-4 md:px-6 py-8">
+      <main className={styles.main}>
         {/* Step indicator header */}
         <div className="animate-fade-in">
-          <p className="text-xs font-bold text-[#1E3A8A] tracking-wider mb-3 text-center">
+          <p className={styles.stepHeader}>
             STEP 3 OF 3
           </p>
           <StepIndicator currentStep={2} totalSteps={3} />
         </div>
 
         {/* Heading */}
-        <h1 className="animate-fade-in-up delay-100 font-montserrat text-3xl md:text-4xl font-bold text-[#0F172A] mt-8 mb-2 text-center">
+        <h1 className={`${styles.title} animate-fade-in-up delay-100`}>
           Pick Your First Course
         </h1>
-        <p className="animate-fade-in-up delay-200 text-sm text-[#475569] text-center mb-8 max-w-lg">
+        <p className={`${styles.subtitle} animate-fade-in-up delay-200`}>
           Based on your professional interests, we&apos;ve curated these high-impact starter courses to help you begin your learning journey immediately.
         </p>
 
         {/* Category Tabs */}
-        <div className="animate-fade-in-up delay-300 flex flex-wrap justify-center gap-3 mb-10">
+        <div className={`${styles.categoryTabs} animate-fade-in-up delay-300`}>
           {categories.map((cat) => (
             <button
               key={cat.label}
               onClick={() => setActiveCategory(cat.label)}
-              className={`px-4 py-2 rounded-full text-[14px] font-medium transition-all duration-300 border flex items-center gap-2 ${
-                activeCategory === cat.label
-                  ? "bg-[#1E3A8A] text-white border-[#1E3A8A] shadow-md"
-                  : "bg-white text-[#334155] border-gray-200 hover:border-gray-400 hover:shadow-sm"
-              }`}
+              className={activeCategory === cat.label ? styles.categoryBtnActive : styles.categoryBtnInactive}
             >
               {cat.icon && (
                 <Image
@@ -111,7 +108,7 @@ export default function Step3() {
                   alt={cat.label}
                   width={18}
                   height={18}
-                  className={activeCategory === cat.label ? "brightness-0 invert" : ""}
+                  className={activeCategory === cat.label ? styles.categoryIconActive : ""}
                 />
               )}
               {cat.label}
@@ -120,48 +117,48 @@ export default function Step3() {
         </div>
 
         {/* Course Grid */}
-        <div className="w-full max-w-[1052px] grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[5.3rem] p-4 md:p-12 mb-16 relative">
+        <div className={styles.courseGrid}>
           {filteredCourses.map((course, index) => (
             <div
               key={index}
-              className="animate-fade-in-up w-full max-w-[510px] mx-auto rounded-[20px] p-[12px] opacity-100 shadow-lg col-span-1 row-span-1 border-2 border-solid border-[#ffffff]/60 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className={`${styles.courseCard} animate-fade-in-up`}
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               {/* Course Image */}
-              <div className="relative bg-gray-50 overflow-hidden rounded-20px">
+              <div className={styles.courseImageWrapper}>
                 <Image
                   src={course.image}
                   alt={course.title}
                   width={486}
                   height={328}
-                  className="w-full h-auto"
+                  className={styles.courseImage}
                 />
               </div>
 
               {/* Course Info */}
-              <div className="w-full p-4 relative">
+              <div className={styles.courseInfo}>
                 {/* Title row with stars */}
-                <div className="flex items-start justify-between mb-1">
-                  <div className="flex items-center gap-3 w-full">
-                    <div className="flex flex-col items-start gap-3 w-[50px] ">
+                <div className={styles.courseTitleRow}>
+                  <div className={styles.courseMetaRow}>
+                    <div className={styles.progressCol}>
                       <Image
                         src={course.progress === 69 ? `${ASSET_PATH}/progress bar.bar.png` : `${ASSET_PATH}/progress bar.png`}
                         alt={`${course.progress}% progress`}
                         width={50}
                         height={50}
-                        className="object-contain"
+                        className={styles.progressImage}
                       />
-                      <p className="text-xs font-bold text-[#0F172A] left-[8px] top-[56px] ml-1.5">
+                      <p className={styles.progressText}>
                         {course.progress}%
                       </p>
                     </div>
-                    <div className="gap-12 flex-1 -mt-8">
+                    <div className={styles.courseDetailsCol}>
                       <div>
-                       <h3 className="text-[16px] md:text-[20px] font-bold font-montserrat text-[#343131] leading-28">
+                       <h3 className={styles.courseTitle}>
                          {course.title}
                        </h3>
-                       <div className="flex items-center gap-2 mt-1 w-full justify-between">
-                          <p className="text-xs text-[#64748B]">{course.author}</p>
+                       <div className={styles.courseAuthorRow}>
+                          <p className={styles.courseAuthor}>{course.author}</p>
                           <StarRating />
                        </div>
                        
@@ -176,7 +173,7 @@ export default function Step3() {
                 {/* Author */}
 
                 {/* Continue Learning button */}
-                <button className="w-full h-[56px] border-1 mt-[8px] border-[#1E3A8A] rounded-full bg-[#1E3A8A] text-white text-[14px] md:text-[16px] tracking-[0.3px] font-inter hover:transition-all duration-300 hover:shadow-md">
+                <button className={styles.continueBtn}>
                   Continue Learning
                 </button>
               </div>
@@ -185,16 +182,16 @@ export default function Step3() {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between w-full max-w-[413px] mt-8 mb-8">
+        <div className={styles.navRow}>
           <button
             onClick={() => router.back()}
-            className="text-sm text-gray-500 font-medium hover:text-gray-700 flex items-center gap-1"
+            className={styles.backBtn}
           >
             ← Back
           </button>
           <button
             onClick={() => router.push("/onboarding/complete")}
-            className="bg-[#1E3A8A] text-white text-sm font-bold hover:bg-[#1E3A8A] transition flex items-center justify-center gap-[10px] w-[215px] h-[56px] rounded-[40px] py-4 px-5 border border-[#1a1a6e]"
+            className={styles.nextBtn}
           >
             Continue to Step 3 →
           </button>

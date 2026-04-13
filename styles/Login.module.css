@@ -1,0 +1,186 @@
+.page {
+  @apply flex flex-col justify-center bg-white items-center min-h-screen px-4 pb-6;
+}
+
+@media (min-width: 640px) {
+  .page {
+    @apply px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    @apply px-8;
+  }
+}
+
+.bgLogo {
+  @apply pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen;
+  opacity: 6%;
+}
+
+.bgLogoWrapper {
+  @apply flex justify-center items-center;
+}
+
+.formWrapper {
+  @apply mt-8 w-full;
+}
+
+@media (min-width: 640px) {
+  .formWrapper {
+    @apply mx-auto max-w-xl;
+  }
+}
+
+.card {
+  @apply py-8 px-4 shadow rounded-lg backdrop-blur-sm;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 640px) {
+  .card {
+    @apply px-10;
+  }
+}
+
+.logoCenter {
+  @apply flex justify-center;
+}
+
+.headerSection {
+  @apply text-center mb-8;
+}
+
+.title {
+  @apply font-bold leading-8;
+  font-size: 24px;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.subtitle {
+  @apply font-normal;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.form {
+  @apply space-y-6;
+}
+
+.inputRow {
+  @apply flex items-center gap-2;
+}
+
+.inputRowRelative {
+  @apply relative flex items-center gap-2;
+}
+
+.input {
+  @apply appearance-none block w-full px-3 py-2 rounded-xl placeholder-gray-400 transition duration-300;
+  height: 56px;
+  border: 0.25px solid;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input:focus {
+  @apply outline-none ring-indigo-500;
+  border-color: #C7C7CC;
+}
+
+.input:hover {
+  transform: scale(1.02);
+}
+
+.inputPassword {
+  composes: input;
+  @apply pr-10;
+}
+
+.eyeButton {
+  @apply absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500;
+}
+
+.eyeButton:hover {
+  @apply text-gray-700;
+}
+
+.rememberRow {
+  @apply flex flex-row justify-between pb-4;
+}
+
+.checkboxLabel {
+  @apply flex items-center;
+}
+
+.checkbox {
+  @apply h-4 w-4 text-indigo-600 border-gray-300 rounded;
+}
+
+.checkbox:focus {
+  @apply ring-indigo-500;
+}
+
+.rememberText {
+  @apply ml-2 block text-sm text-gray-900;
+}
+
+.forgotLink {
+  @apply text-sm text-indigo-600;
+}
+
+.forgotLink:hover {
+  @apply text-indigo-500;
+}
+
+.submitBtn {
+  @apply w-full flex justify-center items-center py-2 px-4 text-center border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-blue-800 transition duration-300;
+  height: 56px;
+}
+
+.submitBtn:hover {
+  @apply bg-blue-900;
+  transform: scale(1.02);
+}
+
+.submitBtn:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-blue-500;
+}
+
+.socialSection {
+  @apply mt-6 space-y-3;
+}
+
+.socialBtn {
+  @apply w-full flex items-center justify-center border border-blue-800 rounded-3xl shadow-sm bg-white text-sm font-medium text-gray-500 transition duration-300;
+  height: 56px;
+}
+
+.socialBtn:hover {
+  @apply bg-gray-50;
+  transform: scale(1.02);
+}
+
+.socialBtnText {
+  @apply ml-2 text-blue-800;
+}
+
+.registerText {
+  @apply mt-6 text-center text-sm text-gray-600 pb-8;
+}
+
+.registerLink {
+  @apply font-medium px-2;
+  color: #35a2ff;
+}
+
+.registerLink:hover {
+  color: #1e90ff;
+}

@@ -1,0 +1,162 @@
+.page {
+  @apply min-h-screen bg-white text-black flex items-center justify-center p-4;
+}
+
+@media (min-width: 768px) {
+  .page {
+    @apply p-6;
+  }
+}
+
+.bgLogoWrapper {
+  @apply flex justify-center items-center;
+}
+
+.bgLogo {
+  @apply pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen;
+  opacity: 6%;
+}
+
+.card {
+  @apply w-full max-w-xl shadow-lg px-4 pb-10 rounded-2xl backdrop-blur-sm;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) {
+  .card {
+    @apply px-10;
+  }
+}
+
+.logoCenter {
+  @apply flex flex-col items-center;
+}
+
+.headerSection {
+  @apply text-center mb-1;
+}
+
+.title {
+  @apply font-bold;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.emailRow {
+  @apply flex items-start justify-between font-medium gap-4 mb-10;
+  line-height: 26px;
+}
+
+.emailDisplay {
+  @apply flex items-center gap-2 justify-center;
+}
+
+.emailText {
+  @apply font-medium bg-gray-100;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.emailHint {
+  @apply font-medium;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.codeGrid {
+  @apply grid grid-cols-6 gap-2 mb-8;
+}
+
+@media (min-width: 768px) {
+  .codeGrid {
+    @apply gap-3;
+  }
+}
+
+.codeInput {
+  @apply text-center text-xl font-bold rounded-lg outline-none transition-all;
+  height: 56px;
+  border: 1px solid rgba(159, 155, 155, 0.36);
+}
+
+@media (min-width: 768px) {
+  .codeInput {
+    height: 79px;
+    @apply text-2xl;
+  }
+}
+
+.codeInput:focus {
+  @apply border-cyan-500 ring-1 ring-cyan-500;
+}
+
+.resendSection {
+  @apply flex flex-col justify-center items-center gap-2 text-center mb-8;
+}
+
+@media (min-width: 640px) {
+  .resendSection {
+    @apply flex-row;
+  }
+}
+
+.resendText {
+  @apply font-medium mb-2;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.resendBtn {
+  @apply inline-flex items-center gap-2 transition-colors;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.resendBtn:hover {
+  @apply text-black;
+}
+
+.verifyBtn {
+  @apply w-full py-4 rounded-xl font-semibold text-white text-lg transition-all;
+  background-color: #1E3A8A;
+  box-shadow: 0 10px 15px -3px rgba(0, 139, 139, 0.3);
+}
+
+.verifyBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgba(0, 139, 139, 0.4);
+}
+
+.bottomLinks {
+  @apply flex flex-col items-center justify-center gap-4 mt-8 text-sm;
+}
+
+@media (min-width: 640px) {
+  .bottomLinks {
+    @apply flex-row;
+  }
+}
+
+.backLink {
+  @apply flex items-center gap-2 font-medium transition-colors;
+  color: #0088FF;
+  line-height: 24px;
+}
+
+.supportLink {
+  @apply transition-colors;
+  color: #64748B;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}

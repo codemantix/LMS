@@ -1,0 +1,208 @@
+.page {
+  @apply min-h-screen flex flex-col bg-white font-inter;
+}
+
+.main {
+  @apply flex-1 flex flex-col items-center px-4 py-8;
+}
+
+@media (min-width: 768px) {
+  .main {
+    @apply px-6;
+  }
+}
+
+.stepHeader {
+  @apply text-xs font-bold tracking-wider mb-3 text-center;
+  color: #1E3A8A;
+}
+
+.title {
+  @apply font-montserrat text-3xl font-bold mt-8 mb-2 text-center;
+  color: #0F172A;
+}
+
+@media (min-width: 768px) {
+  .title {
+    @apply text-4xl;
+  }
+}
+
+.subtitle {
+  @apply text-sm text-center mb-8 max-w-lg;
+  color: #475569;
+}
+
+/* Category Tabs */
+.categoryTabs {
+  @apply flex flex-wrap justify-center gap-3 mb-10;
+}
+
+.categoryBtn {
+  @apply px-4 py-2 rounded-full font-medium transition-all duration-300 border flex items-center gap-2;
+  font-size: 14px;
+}
+
+.categoryBtnActive {
+  composes: categoryBtn;
+  @apply text-white shadow-md;
+  background-color: #1E3A8A;
+  border-color: #1E3A8A;
+}
+
+.categoryBtnInactive {
+  composes: categoryBtn;
+  @apply bg-white border-gray-200;
+  color: #334155;
+}
+
+.categoryBtnInactive:hover {
+  @apply border-gray-400 shadow-sm;
+}
+
+.categoryIconActive {
+  @apply brightness-0 invert;
+}
+
+/* Course Grid */
+.courseGrid {
+  @apply w-full max-w-[1052px] grid grid-cols-1 gap-6 p-4 mb-16 relative;
+}
+
+@media (min-width: 768px) {
+  .courseGrid {
+    @apply grid-cols-2 p-12;
+    gap: 5.3rem;
+  }
+}
+
+.courseCard {
+  @apply w-full max-w-[510px] mx-auto overflow-hidden transition-all duration-300;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.courseCard:hover {
+  @apply shadow-xl;
+  transform: translateY(-4px);
+}
+
+.courseImageWrapper {
+  @apply relative bg-gray-50 overflow-hidden;
+  border-radius: 20px;
+}
+
+.courseImage {
+  @apply w-full h-auto;
+}
+
+.courseInfo {
+  @apply w-full p-4 relative;
+}
+
+.courseTitleRow {
+  @apply flex items-start justify-between mb-1;
+}
+
+.courseMetaRow {
+  @apply flex items-center gap-3 w-full;
+}
+
+.progressCol {
+  @apply flex flex-col items-start gap-3;
+  width: 50px;
+}
+
+.progressImage {
+  @apply object-contain;
+}
+
+.progressText {
+  @apply text-xs font-bold ml-1.5;
+  color: #0F172A;
+}
+
+.courseDetailsCol {
+  @apply flex-1;
+  margin-top: -2rem;
+}
+
+.courseTitle {
+  @apply font-bold font-montserrat;
+  font-size: 16px;
+  line-height: 28px;
+  color: #343131;
+}
+
+@media (min-width: 768px) {
+  .courseTitle {
+    font-size: 20px;
+  }
+}
+
+.courseAuthorRow {
+  @apply flex items-center gap-2 mt-1 w-full justify-between;
+}
+
+.courseAuthor {
+  @apply text-xs;
+  color: #64748B;
+}
+
+.starRating {
+  @apply flex gap-0.5;
+}
+
+.starIcon {
+  opacity: 0.3;
+}
+
+.continueBtn {
+  @apply w-full rounded-full text-white font-inter transition-all duration-300;
+  height: 56px;
+  border: 1px solid #1E3A8A;
+  background-color: #1E3A8A;
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+@media (min-width: 768px) {
+  .continueBtn {
+    font-size: 16px;
+  }
+}
+
+.continueBtn:hover {
+  @apply shadow-md;
+}
+
+/* Navigation */
+.navRow {
+  @apply flex items-center justify-between w-full max-w-[413px] mt-8 mb-8;
+}
+
+.backBtn {
+  @apply text-sm text-gray-500 font-medium flex items-center gap-1;
+}
+
+.backBtn:hover {
+  @apply text-gray-700;
+}
+
+.nextBtn {
+  @apply text-white text-sm font-bold transition flex items-center justify-center;
+  background-color: #1E3A8A;
+  width: 215px;
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 20px;
+  gap: 10px;
+  border: 1px solid #1a1a6e;
+}
+
+.nextBtn:hover {
+  background-color: #1E3A8A;
+}

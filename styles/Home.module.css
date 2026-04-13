@@ -1,0 +1,349 @@
+.page {
+  @apply min-h-screen flex flex-col bg-white overflow-hidden font-inter;
+}
+
+.heroSection {
+  @apply flex-1 relative;
+}
+
+.heroInner {
+  @apply flex flex-col min-h-[calc(100vh-64px)];
+}
+
+@media (min-width: 1024px) {
+  .heroInner {
+    @apply flex-row;
+  }
+}
+
+/* Left Panel */
+.leftPanel {
+  @apply relative w-full text-white px-5 pt-6 pb-14 flex flex-col overflow-hidden;
+}
+
+@media (min-width: 768px) {
+  .leftPanel {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    border-bottom-right-radius: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .leftPanel {
+    @apply w-[55%] pb-16;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-bottom-right-radius: 100px;
+  }
+}
+
+.bgImage {
+  @apply object-cover -z-0;
+}
+
+.overlay {
+  @apply absolute inset-0;
+}
+
+.leftContent {
+  @apply relative z-10 flex flex-col flex-1;
+}
+
+.logoWrapper {
+  @apply flex items-center gap-2.5 mb-12;
+}
+
+@media (min-width: 1024px) {
+  .logoWrapper {
+    @apply mb-16;
+  }
+}
+
+.whiteLogo {
+  @apply w-auto;
+  height: 50px;
+}
+
+.heading {
+  @apply font-montserrat font-bold leading-[140%] mb-6;
+  font-size: 28px;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 50px;
+    line-height: 150%;
+  }
+}
+
+.subtitle {
+  @apply text-base mb-10 max-w-[380px] leading-relaxed;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cardsContainer {
+  @apply space-y-4 mb-10;
+}
+
+.featureCard {
+  @apply bg-white rounded-2xl p-5 max-w-[400px] transition-all duration-300 cursor-default;
+}
+
+.featureCard:hover {
+  @apply shadow-lg;
+}
+
+.featureCardInner {
+  @apply flex items-start gap-4;
+}
+
+.featureCardTitle {
+  @apply font-montserrat font-bold mb-1;
+  font-size: 15px;
+  color: #1E3A8A;
+}
+
+.featureCardText {
+  @apply leading-relaxed;
+  font-size: 13px;
+  color: #1E3A8A;
+}
+
+.ctaButtons {
+  @apply flex items-center gap-4;
+}
+
+.getStartedBtn {
+  @apply px-8 py-3 bg-white rounded-full font-bold transition-all duration-300;
+  font-size: 13px;
+  color: #1a1a6e;
+}
+
+.getStartedBtn:hover {
+  @apply bg-gray-100 shadow-lg;
+}
+
+.browseBtn {
+  @apply px-8 py-3 border-2 border-white text-white rounded-full font-bold transition-all duration-300;
+  font-size: 13px;
+}
+
+.browseBtn:hover {
+  @apply bg-white;
+  color: #1a1a6e;
+}
+
+/* Right Panel */
+.rightPanel {
+  @apply w-full flex flex-col pt-6 pb-10 px-5;
+}
+
+@media (min-width: 768px) {
+  .rightPanel {
+    @apply px-8;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rightPanel {
+    @apply w-[45%] pb-0 px-10;
+  }
+}
+
+.topRightButtons {
+  @apply flex items-center justify-end gap-3 mb-8;
+}
+
+@media (min-width: 1024px) {
+  .topRightButtons {
+    @apply mb-0;
+  }
+}
+
+.signUpBtn {
+  @apply px-6 text-white rounded-full font-semibold transition-all duration-300;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  font-size: 13px;
+  background-color: #1E3A8A;
+}
+
+.signUpBtn:hover {
+  @apply shadow-lg;
+  background-color: #14145a;
+}
+
+.loginBtn {
+  @apply px-6 rounded-full font-semibold transition-all duration-300;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  font-size: 13px;
+  border: 2px solid #1E3A8A;
+  color: #1E3A8A;
+}
+
+.loginBtn:hover {
+  @apply text-white;
+  background-color: #1E3A8A;
+}
+
+.dashboardArea {
+  @apply flex-1 flex flex-col items-center justify-center;
+}
+
+.dashboardImageWrapper {
+  @apply relative w-full max-w-[599px] h-auto;
+}
+
+.dashboardImage {
+  @apply w-full h-auto drop-shadow-xl;
+}
+
+.studentBadge {
+  @apply absolute bottom-4 left-4 flex items-center gap-4 bg-white rounded-2xl p-3 shadow-md w-[200px] h-auto max-w-[230px] border border-gray-100 opacity-100;
+}
+
+@media (min-width: 768px) {
+  .studentBadge {
+    @apply p-4 w-[240px] h-[67px];
+    top: 398px;
+    left: 75px;
+    bottom: auto;
+  }
+}
+
+.avatarStack {
+  @apply flex items-center -space-x-2;
+}
+
+.avatar {
+  @apply rounded-full border-2 border-white;
+}
+
+.avatarCount {
+  @apply w-9 h-9 rounded-full flex items-center justify-center text-white font-bold border-2 border-white;
+  font-size: 10px;
+  background-color: #1E3A8A;
+}
+
+.joinText {
+  @apply text-xs text-gray-500 leading-tight;
+}
+
+.stepIndicatorArea {
+  @apply mt-8 flex flex-col items-end w-full max-w-[480px];
+}
+
+@media (min-width: 1024px) {
+  .stepIndicatorArea {
+    @apply mt-12;
+  }
+}
+
+.stepLabel {
+  @apply font-montserrat font-extrabold tracking-[0.15em] mb-1.5 uppercase;
+  font-size: 11px;
+  color: #1E3A8A;
+}
+
+.stepSubLabel {
+  @apply mb-3;
+  font-size: 11px;
+  color: #1E3A8A;
+}
+
+.stepDots {
+  @apply flex items-center gap-2;
+}
+
+.stepDotActive {
+  @apply w-12 h-2 rounded-full transition-all duration-500;
+  background-color: #1E3A8A;
+}
+
+.stepDotInactive {
+  @apply w-12 h-2 rounded-full bg-gray-200;
+}
+
+/* Footer in index */
+.indexFooter {
+  @apply bg-white border-t border-gray-200 px-4 py-5 font-inter;
+}
+
+@media (min-width: 768px) {
+  .indexFooter {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.footerInner {
+  @apply flex flex-col items-center justify-between gap-4;
+}
+
+@media (min-width: 640px) {
+  .footerInner {
+    @apply flex-row;
+  }
+}
+
+.footerBrand {
+  @apply flex flex-col items-center gap-2;
+}
+
+@media (min-width: 640px) {
+  .footerBrand {
+    @apply flex-row gap-3;
+  }
+}
+
+.footerLogo {
+  @apply h-9 w-auto;
+}
+
+.footerRights {
+  @apply font-normal;
+  font-size: 14px;
+  color: #1E3A8A;
+}
+
+@media (min-width: 640px) {
+  .footerRights {
+    @apply ml-4;
+  }
+}
+
+@media (min-width: 768px) {
+  .footerRights {
+    font-size: 18px;
+  }
+}
+
+.footerLinks {
+  @apply flex items-center gap-4 font-medium;
+  font-size: 12px;
+  color: #1E3A8A;
+}
+
+@media (min-width: 768px) {
+  .footerLinks {
+    @apply gap-8;
+    font-size: 13px;
+  }
+}
+
+.footerLink {
+  @apply transition-colors;
+}
+
+.footerLink:hover {
+  color: #1E3A8A;
+}

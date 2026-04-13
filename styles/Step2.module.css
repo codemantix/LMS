@@ -1,0 +1,151 @@
+.page {
+  @apply min-h-screen flex flex-col bg-white font-inter;
+}
+
+.main {
+  @apply flex-1 flex flex-col items-center px-4 py-8 w-full max-w-[870px] mx-auto;
+}
+
+@media (min-width: 768px) {
+  .main {
+    @apply px-6;
+  }
+}
+
+.stepHeader {
+  @apply text-xs font-bold tracking-wider mb-3 text-center;
+  color: #1E3A8A;
+}
+
+.title {
+  @apply text-3xl font-bold font-montserrat mt-8 mb-2 text-center;
+  color: #0F172A;
+}
+
+@media (min-width: 768px) {
+  .title {
+    @apply text-4xl;
+  }
+}
+
+.subtitle {
+  @apply text-sm text-gray-400 text-center mb-10 max-w-md;
+}
+
+.sectionTitle {
+  @apply text-base font-semibold mb-4 text-center flex items-center justify-center gap-2;
+  color: #1a1a2e;
+}
+
+.sectionIcon {
+  @apply w-5 h-5;
+  color: #1a1a6e;
+}
+
+/* Interests */
+.interestsSection {
+  @apply w-full max-w-2xl mb-10;
+}
+
+.interestsGrid {
+  @apply flex flex-wrap justify-center gap-2;
+}
+
+.interestBtn {
+  @apply inline-flex items-center justify-center text-sm font-medium transition border-2;
+}
+
+.interestBtnActive {
+  composes: interestBtn;
+  @apply text-white;
+  background-color: #1a1a6e;
+  border-color: #1a1a6e;
+}
+
+.interestBtnInactive {
+  composes: interestBtn;
+  @apply bg-white border-gray-200;
+  color: #1a1a2e;
+}
+
+.interestBtnInactive:hover {
+  @apply border-gray-400;
+}
+
+/* Learning Goals */
+.goalsSection {
+  @apply w-full max-w-2xl mb-12 mx-auto;
+}
+
+.goalsGrid {
+  @apply grid grid-cols-2 gap-3 w-full;
+}
+
+@media (min-width: 768px) {
+  .goalsGrid {
+    @apply flex justify-center gap-4;
+  }
+}
+
+.goalBtn {
+  @apply flex flex-col items-center justify-center transition;
+}
+
+.goalBtnActive {
+  composes: goalBtn;
+  @apply bg-blue-50;
+  border-color: #1E3A8A;
+}
+
+.goalBtnInactive {
+  composes: goalBtn;
+  @apply border-gray-200;
+  color: #1E3A8A;
+}
+
+.goalBtnInactive:hover {
+  @apply border-gray-300;
+}
+
+.goalTag {
+  @apply font-bold text-gray-400 tracking-wider uppercase mb-1;
+  font-size: 10px;
+}
+
+.goalLabel {
+  @apply text-3xl font-bold;
+  color: #1a1a2e;
+}
+
+.goalSublabel {
+  @apply text-xs mt-1;
+  color: #1E3A8A;
+}
+
+/* Navigation */
+.navRow {
+  @apply flex items-center justify-between w-full max-w-[413px] mt-8 mb-8;
+}
+
+.backBtn {
+  @apply text-sm text-gray-500 font-medium flex items-center gap-1;
+}
+
+.backBtn:hover {
+  @apply text-gray-700;
+}
+
+.continueBtn {
+  @apply text-white text-sm font-bold transition flex items-center justify-center;
+  background-color: #1E3A8A;
+  width: 215px;
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 20px;
+  gap: 10px;
+  border: 1px solid #1a1a6e;
+}
+
+.continueBtn:hover {
+  background-color: #1E3A8A;
+}
