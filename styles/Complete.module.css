@@ -1,0 +1,194 @@
+.page {
+  @apply min-h-screen flex flex-col bg-white;
+}
+
+.main {
+  @apply flex-1 flex flex-col items-center justify-center px-4 py-12;
+}
+
+@media (min-width: 768px) {
+  .main {
+    @apply px-6;
+  }
+}
+
+/* Success Icon */
+.successIconArea {
+  @apply relative mb-8;
+}
+
+.successBox {
+  @apply bg-gray-50 rounded-3xl flex flex-col items-center justify-center relative overflow-hidden;
+  width: 280px;
+  height: 280px;
+  box-shadow: 0px 25px 50px -12px rgba(30, 58, 138, 0.25);
+}
+
+@media (min-width: 768px) {
+  .successBox {
+    width: 404px;
+    height: 404px;
+  }
+}
+
+.bgOverlay {
+  @apply object-cover rounded-3xl pointer-events-none;
+  mix-blend-mode: overlay;
+}
+
+.innerCard {
+  @apply bg-white rounded-2xl p-8 flex flex-col items-center justify-center relative z-10;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.successImage {
+  @apply mb-3;
+}
+
+.starRow {
+  @apply flex gap-1.5;
+}
+
+.starIcon {
+  opacity: 0.3;
+}
+
+.glow {
+  @apply absolute inset-0 bg-blue-100/30 rounded-3xl blur-2xl -z-10 scale-110;
+}
+
+/* Heading */
+.title {
+  @apply font-bold text-center font-montserrat;
+  font-size: 28px;
+  color: #0F172A;
+  line-height: 140%;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 50px;
+    line-height: 150%;
+  }
+}
+
+.subtitle {
+  @apply text-center mb-8 max-w-sm leading-relaxed px-2 font-normal;
+  font-size: 16px;
+  color: #475569;
+  line-height: 28px;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+/* Quick Tip */
+.tipCard {
+  @apply w-full max-w-[576px] border border-gray-100 rounded-xl p-4 mt-7 mb-8;
+  background-color: rgba(30, 58, 138, 0.05);
+}
+
+@media (min-width: 768px) {
+  .tipCard {
+    @apply p-6;
+  }
+}
+
+.tipInner {
+  @apply flex items-center gap-4;
+}
+
+.tipIcon {
+  @apply w-[50px] h-[50px] rounded-xl flex items-center justify-center flex-shrink-0;
+}
+
+.tipContent {
+  @apply flex-1;
+}
+
+.tipTitle {
+  @apply font-bold mb-1;
+  font-size: 16px;
+  color: #0F172A;
+}
+
+.tipTextRow {
+  @apply flex items-center gap-2;
+}
+
+.tipText {
+  line-height: 28px;
+  font-size: 16px;
+  color: #475569;
+}
+
+.tipHighlight {
+  @apply font-bold;
+  font-size: 16px;
+  color: #1E3A8A;
+}
+
+.tipGuideLink {
+  @apply font-bold whitespace-nowrap flex items-center gap-1;
+  font-size: 14px;
+  color: #1E3A8A;
+}
+
+/* Dashboard Button */
+.dashboardBtn {
+  @apply w-full max-w-md text-white rounded-full text-sm font-bold transition text-center block mb-4;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  background-color: #1E3A8A;
+}
+
+.dashboardBtn:hover {
+  background-color: #14145a;
+}
+
+/* Support */
+.supportText {
+  @apply mt-10 mb-40;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+}
+
+.supportLink {
+  font-size: 14px;
+  color: #1E3A8A;
+}
+
+/* Navigation */
+.navRow {
+  @apply flex items-center justify-between w-full max-w-[413px] mt-8 mb-8;
+}
+
+.backBtn {
+  @apply text-sm text-gray-500 font-medium flex items-center gap-1;
+}
+
+.backBtn:hover {
+  @apply text-gray-700;
+}
+
+.nextBtn {
+  @apply text-white text-sm font-bold transition flex items-center justify-center;
+  background-color: #1E3A8A;
+  width: 215px;
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 20px;
+  gap: 10px;
+  border: 1px solid #1a1a6e;
+}
+
+.nextBtn:hover {
+  background-color: #1E3A8A;
+}

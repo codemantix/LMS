@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
@@ -11,7 +12,7 @@ function Logo({ width = 140, height = 40 }) {
         alt="Codemantix Collective"
         width={width}
         height={height}
-        className="h-10 w-auto"
+        className={styles.logo}
       />
     </Link>
   );
@@ -20,16 +21,13 @@ function Logo({ width = 140, height = 40 }) {
 export default function Navbar({ variant = "landing" }) {
   if (variant === "onboarding") {
     return (
-      <nav className="flex items-center justify-between px-4 md:px-14 py-4 bg-white border-b border-gray-100 font-inter">
+      <nav className={styles.navOnboarding}>
         <Logo />
-        <div className="flex items-center gap-4">
-          <button className="text-sm text-[#64748B] hover:text-gray-700 font-medium">
+        <div className={styles.onboardingActions}>
+          <button className={styles.saveExitBtn}>
             Save & Exit
           </button>
-          <Link
-            href="/"
-            className="px-5 py-2 border-2 border-[#1E3A8A] text-[#1E3A8A] rounded-[50px] text-sm font-semibold hover:bg-gray-50 transition font-inter"
-          >
+          <Link href="/" className={styles.skipLink}>
             Skip
           </Link>
         </div>
@@ -39,19 +37,13 @@ export default function Navbar({ variant = "landing" }) {
 
   // Landing variant
   return (
-    <nav className="flex items-center justify-between px-4 md:px-14 py-4 bg-white font-inter">
+    <nav className={styles.nav}>
       <Logo />
-      <div className="flex items-center gap-3">
-        <Link
-          href="/onboarding/step2"
-          className="px-6 py-2.5 bg-[#1a1a6e] text-white rounded-full text-sm font-semibold hover:bg-[#14145a] transition"
-        >
+      <div className={styles.landingActions}>
+        <Link href="/onboarding/step2" className={styles.signUpBtn}>
           Sign Up
         </Link>
-        <Link
-          href="/login"
-          className="px-6 py-2.5 border-2 border-[#1a1a6e] text-[#1a1a6e] rounded-full text-sm font-semibold hover:bg-gray-50 transition"
-        >
+        <Link href="/login" className={styles.loginBtn}>
           Login
         </Link>
       </div>

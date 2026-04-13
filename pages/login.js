@@ -2,10 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Inter } from "next/font/google";
 import Image from "next/image";
-
-const inter = Inter({ subsets: ["latin"] });
+import styles from "../styles/Login.module.css";
 
 export default function LogInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,20 +29,20 @@ export default function LogInPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center bg-white items-center min-h-screen px-4 pb-6 sm:px-6 lg:px-8">
+    <div className={styles.page}>
       {/* Background logo / brand mark  */}
-       <div className='flex justity-center items-center'>
+       <div className={styles.bgLogoWrapper}>
          <img
         src="/assets/logo.png"
         alt=""
         width={1484}
         height={1484}
-        className="pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen max-w-screen opacity-[6%]"
+        className={styles.bgLogo}
       />
        </div>
-      <div className="mt-8 w-full sm:mx-auto sm:max-w-xl">
-        <div className="py-8 px-4 shadow rounded-lg sm:px-10 backdrop-blur-sm bg-[#FFFFFF33]">
-          <div className="flex justify-center">
+      <div className={styles.formWrapper}>
+        <div className={styles.card}>
+          <div className={styles.logoCenter}>
             <Image
               src="/assets/logo.png"
               alt="Logo"
@@ -53,15 +51,15 @@ export default function LogInPage() {
             />
           </div>
 
-          <div className="text-center mb-8">
-            <h1 className="text-[24px] sm:text-[30px] font-bold leading-[32px] sm:leading-[36px]">Welcome Back!</h1>
-            <p className={`${inter.className} font-regular text-[18px] leading-[28px] text-[#000000B2]`}>
+          <div className={styles.headerSection}>
+            <h1 className={styles.title}>Welcome Back!</h1>
+            <p className={styles.subtitle}>
               Please Login to your account
             </p>
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div className="flex items-center gap-2">
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.inputRow}>
               <Image
                 src='/assets/ci_mail.png'
                 alt="Mail Icon"
@@ -77,11 +75,11 @@ export default function LogInPage() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter Email"
-                className="appearance-none block w-full h-[56px] px-3 py-2 rounded-[12px] border-[0.25px] shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-[#C7C7CC] sm:text-sm hover:scale-[1.02] transition duration-300"
+                className={styles.input}
               />
             </div>
 
-            <div className="relative flex items-center gap-2">
+            <div className={styles.inputRowRelative}>
               <Image
                 src='/assets/uil_padlock.png'
                 alt="Padlock Icon"
@@ -96,11 +94,11 @@ export default function LogInPage() {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Enter Password"
-                className="appearance-none block w-full h-[56px] px-3 py-2 rounded-[12px] border-[0.25px] shadow-[0_4px_0_rgba(0,0,0,0.2)] placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-[#C7C7CC] sm:text-sm pr-10 hover:scale-[1.02] transition duration-300"
+                className={styles.inputPassword}
               />
               <button
                 type="button"
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700"
+                className={styles.eyeButton}
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
@@ -108,57 +106,45 @@ export default function LogInPage() {
               </button>
             </div>
 
-            <div className="flex flex-row justify-between pb-4">
-              <label htmlFor="remember-me" className="flex items-center">
+            <div className={styles.rememberRow}>
+              <label htmlFor="remember-me" className={styles.checkboxLabel}>
                 <input
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+                  className={styles.checkbox}
                 />
-                <span className="ml-2 block text-sm text-gray-900">Remember me</span>
+                <span className={styles.rememberText}>Remember me</span>
               </label>
-              <Link href="/forgot-password" className="text-sm text-indigo-600 hover:text-indigo-500">
+              <Link href="/forgot-password" className={styles.forgotLink}>
                 Forgot your password?
               </Link>
             </div>
 
             <div>
-              <button
-                type="submit"
-                className="w-full h-[56px] flex justify-center items-center py-2 px-4 text-center border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-blue-800 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-[1.02] transition duration-300"
-              >
+              <button type="submit" className={styles.submitBtn}>
                 Login
               </button>
             </div>
           </form>
 
           {/* Social Buttons */}
-          <div className="mt-6 space-y-3">
-            <button
-              type="button"
-              className="w-full h-[56px] flex items-center justify-center border border-blue-800 rounded-3xl shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transform hover:scale-[1.02] transition duration-300"
-            >
+          <div className={styles.socialSection}>
+            <button type="button" className={styles.socialBtn}>
               <FcGoogle size={20} />
-              <span className="ml-2 text-blue-800">Sign up with Google</span>
+              <span className={styles.socialBtnText}>Sign up with Google</span>
             </button>
 
-            <button
-              type="button"
-              className="w-full h-[56px] flex items-center justify-center border border-blue-800 rounded-3xl shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transform hover:scale-[1.02] transition duration-300"
-            >
+            <button type="button" className={styles.socialBtn}>
               <FaApple size={20} className="text-black" />
-              <span className="ml-2 text-blue-800">Sign up with Apple</span>
+              <span className={styles.socialBtnText}>Sign up with Apple</span>
             </button>
           </div>
 
           {/* Register Link */}
-          <p className="mt-6 text-center text-sm text-gray-600 pb-8">
+          <p className={styles.registerText}>
             New to Codemantixe Collective?{' '}
-            <Link
-              href="/signup"
-              className="text-[#35a2ff] hover:text-[#1e90ff] font-medium px-2"
-            >
+            <Link href="/signup" className={styles.registerLink}>
               Register
             </Link>
           </p>

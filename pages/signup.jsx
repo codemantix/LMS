@@ -2,6 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styles from "../styles/Signup.module.css";
 
 const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
@@ -38,55 +39,42 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] relative overflow-hidden px-4">
+    <div className={styles.page}>
       {/* Background logo watermark */}
-      <div className="absolute pointer-events-none hidden md:block" style={{ width: 1480, height: 1480, top: '50%', left: -100, transform: 'translateY(-50%)', opacity: 0.06 }}>
+      <div className={styles.bgWatermark} style={{ width: 1480, height: 1480, top: '50%', left: -100, transform: 'translateY(-50%)', opacity: 0.06 }}>
         <Image
           src={`${ASSET_PATH}/codemantix logo png 3.png`}
           alt=""
           width={1480}
           height={1480}
-          className="w-full h-full object-contain"
+          className={styles.bgWatermarkImage}
         />
       </div>
 
-      <div
-        className="relative z-10 flex flex-col items-center w-full max-w-[520px]"
-        style={{
-          borderRadius: 20,
-          padding: '24px',
-          background: 'rgba(255, 255, 255, 0.92)',
-          boxShadow: '0px 7px 15px 0px #00000012',
-          backdropFilter: 'blur(30px)',
-          marginBottom: 60,
-          marginTop: 32,
-          gap: '24px',
-        }}
-      >
-      <div className="w-full" style={{ maxWidth: 460 }}>
+      <div className={styles.card}>
+      <div className={styles.cardInner}>
         {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <Link href="/" className="flex items-center gap-2">
+        <div className={styles.logoCenter}>
+          <Link href="/" className={styles.logoLink}>
             <Image
               src={`${ASSET_PATH}/codemantix logo png 3.png`}
               alt="Codemantix Collective"
               width={125}
               height={43}
             />
-          
           </Link>
         </div>
 
         {/* Heading */}
-        <h1 className="text-[28px] font-montserrat font-bold text-[#000000] text-center mb-1">
+        <h1 className={styles.title}>
           Create Your Account
         </h1>
-        <p className="text-[15px] text-[#000000B2] text-center mb-7">
+        <p className={styles.subtitle}>
           Please enter your  correct details
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-3.5">
+        <form onSubmit={handleSubmit} className={styles.form}>
           <div>
             <input
               type="text"
@@ -95,7 +83,7 @@ export default function SignUp() {
               value={form.fullName}
               onChange={handleChange}
               required
-              className="w-full px-5 py-3.5 border border-[#E2E8F0] rounded-xl text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-[#1a1a6e] transition bg-white"
+              className={styles.input}
             />
           </div>
           <div>
@@ -106,7 +94,7 @@ export default function SignUp() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full px-5 py-3.5 border border-[#E2E8F0] rounded-xl text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-[#1a1a6e] transition bg-white"
+              className={styles.input}
             />
           </div>
           <div>
@@ -117,10 +105,10 @@ export default function SignUp() {
               value={form.phone}
               onChange={handleChange}
               required
-              className="w-full px-5 py-3.5 border border-[#E2E8F0] rounded-xl text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-[#1a1a6e] transition bg-white"
+              className={styles.input}
             />
           </div>
-          <div className="relative">
+          <div className={styles.passwordWrapper}>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -128,26 +116,26 @@ export default function SignUp() {
               value={form.password}
               onChange={handleChange}
               required
-              className="w-full px-5 py-3.5 border border-[#E2E8F0] rounded-xl text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-[#1a1a6e] transition bg-white pr-12"
+              className={styles.inputPassword}
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className={styles.eyeButton}
             >
               {showPassword ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={styles.eyeIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L6.59 6.59m7.532 7.532l3.29 3.29M3 3l18 18" />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={styles.eyeIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               )}
             </button>
           </div>
-          <div className="relative">
+          <div className={styles.passwordWrapper}>
             <input
               type={showConfirm ? "text" : "password"}
               name="confirmPassword"
@@ -155,19 +143,19 @@ export default function SignUp() {
               value={form.confirmPassword}
               onChange={handleChange}
               required
-              className="w-full px-5 py-3.5 border border-[#E2E8F0] rounded-xl text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-[#1a1a6e] transition bg-white pr-12"
+              className={styles.inputPassword}
             />
             <button
               type="button"
               onClick={() => setShowConfirm(!showConfirm)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className={styles.eyeButton}
             >
               {showConfirm ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={styles.eyeIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L6.59 6.59m7.532 7.532l3.29 3.29M3 3l18 18" />
                 </svg>
               ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={styles.eyeIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
@@ -177,7 +165,7 @@ export default function SignUp() {
 
           {/* Password error message */}
           {passwordError && (
-            <div className="flex items-center justify-center gap-2 font-inter" style={{ width: 291, height: 24 }}>
+            <div className={styles.passwordError} style={{ width: 291, height: 24 }}>
               <Image
                 src={`${ASSET_PATH}/Vector.png`}
                 alt="error"
@@ -194,25 +182,25 @@ export default function SignUp() {
           )}
 
           {/* Terms */}
-          <div className="flex items-start gap-3 pt-1">
+          <div className={styles.termsRow}>
             <button
               type="button"
               onClick={() => setAgreed(!agreed)}
-              className={`mt-0.5 w-5 h-5 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition ${agreed ? 'border-[#1a1a6e] bg-[#1a1a6e]' : 'border-gray-300 bg-white'}`}
+              className={agreed ? styles.termsCheckboxChecked : styles.termsCheckboxUnchecked}
             >
               {agreed && (
-                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={styles.checkIcon} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               )}
             </button>
-            <span className="text-[16px] leading-16 text-gray-500">
+            <span className={styles.termsText}>
               By Signing Up, You agree to the{" "}
-              <Link href="#" className="text-[#0088FF] underline font-medium">
+              <Link href="#" className={styles.termsLink}>
                 Terms of Services
               </Link>{" "}
               and{" "}
-              <Link href="#" className="text-[#0088FF] underline font-medium">
+              <Link href="#" className={styles.termsLink}>
                 Privacy Policy
               </Link>
               .
@@ -220,17 +208,14 @@ export default function SignUp() {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3.5 bg-[#1E3A8A] text-white font-inter text-[16px] rounded-full text-sm font-semibold hover:bg-[#1E3A8A] transition mt-5"
-          >
+          <button type="submit" className={styles.submitBtn}>
             Sign Up
           </button>
         </form>
 
         {/* Social Login */}
-        <div className="mt-6 space-y-3">
-          <button className="w-full py-3 border border-gray-200 rounded-full text-[#1E3A8A] text-[16px] leading-24   flex items-center justify-center gap-3 hover:bg-gray-50 transition">
+        <div className={styles.socialSection}>
+          <button className={styles.socialBtn}>
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"
@@ -251,7 +236,7 @@ export default function SignUp() {
             </svg>
             Continue with Google
           </button>
-          <button className="w-full py-3 text-[#1E3A8A] text-[16px] leading-24 border border-gray-200 rounded-full flex items-center justify-center gap-3 hover:bg-gray-50 transition">
+          <button className={styles.socialBtn}>
             <svg className="w-5 h-5" fill="#000000" viewBox="0 0 24 24">
               <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
             </svg>
@@ -260,9 +245,9 @@ export default function SignUp() {
         </div>
 
         {/* Login link */}
-        <p className="text-center text-sm text-[#000000] mt-6">
+        <p className={styles.loginText}>
           Already have an account?{" "}
-          <Link href="/login" className="text-[#0088FF] font-inter font-inter text-[16px] leading-24 hover:underline">
+          <Link href="/login" className={styles.loginLink}>
             Login
           </Link>
         </p>

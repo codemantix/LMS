@@ -1,0 +1,77 @@
+.page {
+  @apply min-h-screen bg-white flex items-center justify-center p-4;
+}
+
+@media (min-width: 768px) {
+  .page {
+    @apply p-6;
+  }
+}
+
+.card {
+  @apply p-6 max-w-2xl w-full text-center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    @apply p-10;
+  }
+}
+
+.bgLogoWrapper {
+  @apply flex justify-center items-center;
+}
+
+.bgLogo {
+  @apply pointer-events-none select-none absolute inset-0 m-auto w-1/2 min-h-screen;
+  opacity: 6%;
+}
+
+.checkmarkCenter {
+  @apply flex items-center justify-center mb-6;
+}
+
+.title {
+  @apply font-semibold mb-6 text-black;
+  font-size: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  @apply mb-12 font-normal text-lg leading-relaxed;
+  color: #475569;
+}
+
+.verificationImage {
+  @apply flex justify-center mb-8;
+}
+
+.dashboardBtn {
+  @apply block w-full py-4 px-5 rounded-full text-white mb-4;
+  background-color: #1E3A8A;
+  border: 1px solid #C6C6C8;
+}
+
+.profileBtn {
+  @apply inline-flex items-center rounded-full py-4 px-5 w-full justify-center mb-2;
+  border: 1px solid #1E3A8A;
+  color: #1E3A8A;
+}
+
+.supportText {
+  @apply text-center text-sm text-gray-600;
+}
+
+.supportLink {
+  @apply font-medium;
+  color: #1E3A8A;
+}
+
+.supportLink:hover {
+  @apply text-blue-700;
+}
