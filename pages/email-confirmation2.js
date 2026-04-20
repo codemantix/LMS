@@ -1,16 +1,14 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
-import styles from '../styles/EmailConfirmation.module.css';
-
-// const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
+import styles from '../styles/EmailConfirmation2.module.css';
 
 export default function EmailConfirmationPage() {
   return (
     <div className={styles.page}>
       {/* Background logo / brand mark */}
       <div className={styles.bgLogoWrapper}>
-       <img
+        <img
           src="/assets/logo.png"
           alt=""
           width={1484}
@@ -36,7 +34,7 @@ export default function EmailConfirmationPage() {
               Email Verification
             </h1>
             <p className={styles.subtitle}>
-              We've sent an 6-digit verification code to:
+              Enter the verification code sent to:
             </p>
           </div>
 
@@ -51,12 +49,9 @@ export default function EmailConfirmationPage() {
                 height={24}
               />
             </div>
-            <p className={styles.emailHint}>
-              Please enter it below to confirm your account.
-            </p>
           </div>
 
-          {/* 6-digit code inputs */}
+           {/* 6-digit code inputs */}
           <div className={styles.codeGrid}>
             {Array.from({ length: 6 }).map((_, i) => (
               <input
@@ -81,14 +76,6 @@ export default function EmailConfirmationPage() {
               Send a new code
             </button>
           </div>
-
-          {/* Verify button */}
-          <button
-            type="button"
-            className={styles.verifyBtn}
-          >
-            Verify Email
-          </button>
 
           {/* Back & support links */}
           <div className={styles.bottomLinks}>

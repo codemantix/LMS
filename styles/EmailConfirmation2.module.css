@@ -49,8 +49,9 @@
 }
 
 .emailRow {
-  @apply flex items-start justify-between font-medium gap-4 mb-10;
+  @apply font-medium gap-4 mb-10;
   line-height: 26px;
+  text-align: center;
 }
 
 .emailDisplay {
@@ -127,14 +128,14 @@
 }
 
 .verifyBtn {
-  @apply w-full py-4 rounded-xl font-semibold text-white text-lg transition-all duration-500 ease-in-out;
+  @apply w-full py-4 rounded-xl font-semibold text-white text-lg transition-all;
   background-color: #1E3A8A;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px -3px rgba(0, 139, 139, 0.3);
 }
 
 .verifyBtn:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 15px -3px rgba(0, 139, 139, 0.4);
 }
 
 .bottomLinks {

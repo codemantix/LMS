@@ -10,8 +10,8 @@ export default function ResetPassword() {
         <img
           src="/assets/logo.png"
           alt=""
-          width={1484}
-          height={1484}
+          width={2000}
+          height={2000}
           className={styles.bgLogo}
         />
       </div>
@@ -40,7 +40,7 @@ export default function ResetPassword() {
 
             {/* New Password */}
             <div>
-              <label>New Password</label>
+              <label className={styles.label}>New Password</label>
               <div className={styles.emailInputRow}>
                 <Image
                   src='/assets/uil_padlock.png'
@@ -58,7 +58,7 @@ export default function ResetPassword() {
 
             {/* Confirm New Password */}
             <div>
-              <label>Confirm New Password</label>
+              <label className={styles.label}>Confirm New Password</label>
               <div className={styles.emailInputRow}>
                 <Image
                   src='/assets/Secure.png'
@@ -75,10 +75,10 @@ export default function ResetPassword() {
             </div>
 
             {/* Password Requirements */}
-            <div>
-              <p>PASSWORD REQUIREMENTS</p>
-              <div>
-                <div>
+            <div className={styles.containerP}>
+              <p className={styles.passwordText}>PASSWORD REQUIREMENTS</p>
+              <div className={styles.passwordContainer}>
+                <div className={styles.iconpassword}>
                   <Image
                     src='/assets/good.png'
                     alt='Good icon'
@@ -87,7 +87,7 @@ export default function ResetPassword() {
                   />
                   <span>At least 8 characters long</span>
                 </div>
-                <div>
+                <div className={styles.iconpassword}>
                   <Image
                     src='/assets/Circle-icon.png'
                     alt='Neutral icon'
