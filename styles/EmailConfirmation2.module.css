@@ -99,12 +99,12 @@
 }
 
 .resendSection {
-  @apply flex flex-col justify-center items-start gap-2 text-center mb-8;
+  @apply flex flex-row justify-center items-start gap-2 text-center mb-8;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 420px) {
   .resendSection {
-    @apply flex-row;
+    @apply flex-col items-center gap-1;
   }
 }
 

@@ -185,3 +185,9 @@
 .registerLink:hover {
   color: #1e90ff;
 }
+
+@media (max-width: 350px) {
+  .rememberRow {
+    @apply flex-col gap-4;
+  }
+}

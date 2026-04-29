@@ -141,12 +141,26 @@
   @apply flex flex-col items-center justify-center gap-4 mt-8 text-sm;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 640px) {
   .bottomLinks {
     @apply flex-row;
   }
+  .resendSection {
+    @apply flex-row;
+  }
+  .emailRow {
+    @apply flex-col items-center gap-2;
+  }
+  .emailHint {
+    @apply text-center;
+  }
 }
 
+@media (max-width: 406px) {
+  .resendSection {
+    @apply flex-col items-center gap-1
+  }
+}
 .backLink {
   @apply flex items-center gap-2 font-medium transition-colors;
   color: #0088FF;
