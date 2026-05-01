@@ -7,6 +7,7 @@ import styles from "../styles/Login.module.css";
 
 export default function LogInPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const [popup, setPopup] = useState("");
 
   const [formData, setFormData] = useState({
     email: '',
@@ -25,11 +26,25 @@ export default function LogInPage() {
     e.preventDefault();
     console.log("Form Submitted:", formData);
     // TODO: Add your actual login API call here
-    alert("Login successful! (Demo)");
+    setPopup("Login successful! (Demo)");
   };
 
   return (
     <div className={styles.page}>
+      {/* Popup Modal */}
+      {popup && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 50, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.45)" }}>
+          <div style={{ background: "#fff", borderRadius: 20, boxShadow: "0 8px 32px rgba(0,0,0,0.18)", padding: "32px 28px", maxWidth: 320, width: "100%", margin: "0 16px", textAlign: "center" }}>
+            <p style={{ color: "#1E3A8A", fontWeight: 600, fontSize: 15, marginBottom: 20 }}>{popup}</p>
+            <button
+              onClick={() => setPopup("")}
+              style={{ background: "#1E3A8A", color: "#fff", border: "none", borderRadius: 40, padding: "10px 32px", fontWeight: 700, fontSize: 14, cursor: "pointer" }}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
       {/* Background logo / brand mark  */}
        <div className={styles.bgLogoWrapper}>
          <img

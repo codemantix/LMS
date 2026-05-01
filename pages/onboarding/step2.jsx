@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -25,11 +25,18 @@ const learningGoals = [
 
 export default function Step2() {
   const router = useRouter();
+  const [nextRoute, setNextRoute] = useState("");
   const [selectedInterests, setSelectedInterests] = useState([
     "Frontend",
     "UX Design",
   ]);
   const [selectedGoal, setSelectedGoal] = useState(1);
+
+  useEffect(() => {
+    if (nextRoute) {
+      router.push(nextRoute);
+    }
+  }, [nextRoute, router]);
 
   const toggleInterest = (interest) => {
     setSelectedInterests((prev) =>
@@ -76,14 +83,14 @@ export default function Step2() {
                   key={interest}
                   onClick={() => toggleInterest(interest)}
                   style={{
-                    minWidth: "133px",
-                    height: "44px",
+                    minWidth: "118px",
+                    height: "38px",
                     borderRadius: "12px",
-                    paddingTop: "9.5px",
-                    paddingRight: "24px",
-                    paddingBottom: "10.5px",
-                    paddingLeft: "24px",
-                    gap: "8px",
+                    paddingTop: "7px",
+                    paddingRight: "18px",
+                    paddingBottom: "7px",
+                    paddingLeft: "18px",
+                    gap: "6px",
                     animationDelay: `${0.3 + idx * 0.05}s`,
                   }}
                   className={`${isSelected ? styles.interestBtnActive : styles.interestBtnInactive} animate-scale-in`}
@@ -113,12 +120,12 @@ export default function Step2() {
                 onClick={() => setSelectedGoal(index)}
                 style={{
                   minWidth: 0,
-                  height: 120,
+                  height: 76,
                   opacity: 1,
                   borderRadius: "12px",
                   borderWidth: "2px",
-                  padding: "16px",
-                  gap: "8px",
+                  padding: "8px",
+                  gap: "4px",
                   justifyContent: "center",
                   alignItems: "center",
                   animationDelay: `${0.5 + index * 0.1}s`,
@@ -148,7 +155,7 @@ export default function Step2() {
             ← Back
           </button>
           <button
-            onClick={() => router.push("/onboarding/step3")}
+            onClick={() => setNextRoute("/onboarding/step3")}
             className={styles.continueBtn}
           >
             Continue to Step 3 →

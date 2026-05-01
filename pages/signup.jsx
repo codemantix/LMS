@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,6 +8,7 @@ const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
 export default function SignUp() {
   const router = useRouter();
+  const [nextRoute, setNextRoute] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [agreed, setAgreed] = useState(false);
@@ -19,6 +20,13 @@ export default function SignUp() {
     confirmPassword: "",
   });
   const [passwordError, setPasswordError] = useState(false);
+  const [termsError, setTermsError] = useState(false);
+
+  useEffect(() => {
+    if (nextRoute) {
+      router.push(nextRoute);
+    }
+  }, [nextRoute, router]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -32,10 +40,11 @@ export default function SignUp() {
     }
     setPasswordError(false);
     if (!agreed) {
-      alert("Please agree to the Terms of Services and Privacy Policy");
+      setTermsError(true);
       return;
     }
-    router.push("/onboarding/step2");
+    setTermsError(false);
+    setNextRoute("/email-confirmation");
   };
 
   return (
@@ -185,7 +194,7 @@ export default function SignUp() {
           <div className={styles.termsRow}>
             <button
               type="button"
-              onClick={() => setAgreed(!agreed)}
+              onClick={() => { setAgreed(!agreed); setTermsError(false); }}
               className={agreed ? styles.termsCheckboxChecked : styles.termsCheckboxUnchecked}
             >
               {agreed && (
@@ -206,6 +215,20 @@ export default function SignUp() {
               .
             </span>
           </div>
+
+          {/* Terms error */}
+          {termsError && (
+            <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: -4 }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF383C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+              <span style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: 12, color: '#FF383C', lineHeight: '18px' }}>
+                Please agree to the Terms of Services and Privacy Policy
+              </span>
+            </div>
+          )}
 
           {/* Submit Button */}
           <button type="submit" className={styles.submitBtn}>
