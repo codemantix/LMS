@@ -1,5 +1,5 @@
 .page {
-  @apply flex flex-col justify-center bg-white items-center min-h-screen px-4 pb-6;
+  @apply flex flex-col justify-center bg-white items-center h-screen overflow-y-auto px-4;
 }
 
 @media (min-width: 640px) {
@@ -24,7 +24,7 @@
 }
 
 .formWrapper {
-  @apply mt-8 w-full;
+  @apply mt-2 w-full;
 }
 
 @media (min-width: 640px) {
@@ -49,30 +49,30 @@
 }
 
 .headerSection {
-  @apply text-center mb-8;
+  @apply text-center mb-3;
 }
 
 .title {
-  @apply font-bold leading-8;
-  font-size: 24px;
+  @apply font-bold leading-7;
+  font-size: 18px;
 }
 
 @media (min-width: 640px) {
   .title {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 28px;
   }
 }
 
 .subtitle {
   @apply font-normal;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 13px;
+  line-height: 20px;
   color: rgba(0, 0, 0, 0.7);
 }
 
 .form {
-  @apply space-y-6;
+  @apply space-y-3;
 }
 
 .inputRow {
@@ -85,9 +85,9 @@
 
 .input {
   @apply appearance-none block w-full px-3 py-2 rounded-xl placeholder-gray-400 transition duration-300;
-  height: 56px;
+  height: 44px;
   border: 0.25px solid #C7C7CC;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .input:focus {
@@ -143,7 +143,7 @@
 
 .submitBtn {
   @apply w-full flex justify-center items-center py-2 px-4 text-center border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-blue-800 transition duration-300;
-  height: 56px;
+  height: 44px;
 }
 
 .submitBtn:hover {
@@ -156,12 +156,12 @@
 }
 
 .socialSection {
-  @apply mt-6 space-y-3;
+  @apply mt-3 space-y-2;
 }
 
 .socialBtn {
   @apply w-full flex items-center justify-center border border-blue-800 rounded-3xl shadow-sm bg-white text-sm font-medium text-gray-500 transition duration-300;
-  height: 56px;
+  height: 44px;
 }
 
 .socialBtn:hover {
@@ -174,7 +174,7 @@
 }
 
 .registerText {
-  @apply mt-6 text-center text-sm text-gray-600 pb-8;
+  @apply mt-3 text-center text-sm text-gray-600 pb-2;
 }
 
 .registerLink {

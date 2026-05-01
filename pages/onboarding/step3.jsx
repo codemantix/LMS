@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar";
@@ -66,7 +66,14 @@ function StarRating() {
 
 export default function Step3() {
   const router = useRouter();
+  const [nextRoute, setNextRoute] = useState("");
   const [activeCategory, setActiveCategory] = useState("All Interests");
+
+  useEffect(() => {
+    if (nextRoute) {
+      router.push(nextRoute);
+    }
+  }, [nextRoute, router]);
 
   const filteredCourses =
     activeCategory === "All Interests"
@@ -141,16 +148,10 @@ export default function Step3() {
                 <div className={styles.courseTitleRow}>
                   <div className={styles.courseMetaRow}>
                     <div className={styles.progressCol}>
-                      <Image
-                        src={course.progress === 69 ? `${ASSET_PATH}/progress bar.bar.png` : `${ASSET_PATH}/progress bar.png`}
-                        alt={`${course.progress}% progress`}
-                        width={50}
-                        height={50}
-                        className={styles.progressImage}
-                      />
-                      <p className={styles.progressText}>
-                        {course.progress}%
-                      </p>
+                      <div className={styles.newUserProgressBar}>
+                        <div className={styles.newUserProgressFill}></div>
+                      </div>
+                      <p className={styles.progressText}>0% · New</p>
                     </div>
                     <div className={styles.courseDetailsCol}>
                       <div>
@@ -174,7 +175,7 @@ export default function Step3() {
 
                 {/* Continue Learning button */}
                 <button className={styles.continueBtn}>
-                  Continue Learning
+                  Start Learning
                 </button>
               </div>
             </div>
@@ -190,10 +191,10 @@ export default function Step3() {
             ← Back
           </button>
           <button
-            onClick={() => router.push("/onboarding/complete")}
+            onClick={() => setNextRoute("/onboarding/complete")}
             className={styles.nextBtn}
           >
-            Continue to Step 3 →
+            Finish Onboarding →
           </button>
         </div>
       </main>

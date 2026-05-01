@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
@@ -5,6 +7,22 @@ import styles from "../styles/Home.module.css";
 const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const hasAccount = localStorage.getItem("lms_has_account");
+    const hasVisited = localStorage.getItem("lms_visited");
+    if (hasAccount === "true") {
+      router.replace("/login");
+      return;
+    }
+    if (hasVisited === "true") {
+      router.replace("/signup");
+      return;
+    }
+    localStorage.setItem("lms_visited", "true");
+  }, []);
+
   return (
     <div className={styles.page}>
       {/* ===== HERO SECTION ===== */}
@@ -26,16 +44,26 @@ export default function Home() {
 
             {/* Content on top of background */}
             <div className={styles.leftContent}>
-              {/* Logo inside panel - top left (White Logo) */}
-              <div className={`animate-fade-in ${styles.logoWrapper}`}>
+              {/* Top bar: Logo left + Nav buttons right */}
+              <div className={`animate-fade-in ${styles.panelTopBar}`}>
                 <Image
                   src={`${ASSET_PATH}/White Logo.png`}
                   alt="Codemantix Collective"
                   width={192}
                   height={60}
-                  className={`${styles.whiteLogo} animate-gentle-bounce`}
+                  className={styles.whiteLogo}
                 />
+                <div className={styles.blueNavButtons}>
+                  <Link href="/onboarding/step2" className={styles.blueSignUpBtn}>
+                    Sign Up
+                  </Link>
+                  <Link href="/onboarding/step2" className={styles.blueLoginBtn}>
+                    Login
+                  </Link>
+                </div>
               </div>
+              <br />
+
 
               {/* Heading */}
               <h1 className={`animate-fade-in-left ${styles.heading}`}>
@@ -46,6 +74,8 @@ export default function Home() {
               <p className={`animate-fade-in-left delay-200 ${styles.subtitle}`}>
                 The next generation Learning Management System designed to accelerate your growth. Your journey to mastery starts here.
               </p>
+              <br />
+
 
               {/* Feature Cards */}
               <div className={styles.cardsContainer}>
@@ -69,6 +99,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+             
 
                 {/* Card 2 - Expert-Led Courses */}
                 <div className={`animate-fade-in-up delay-500 ${styles.featureCard} animate-pulse-glow loop-delay-400`}>
@@ -91,13 +122,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              <br />
 
               {/* CTA Buttons */}
               <div className={`animate-fade-in-up delay-700 ${styles.ctaButtons}`}>
                 <Link href="/onboarding/step2" className={styles.getStartedBtn}>
                   Get Started
                 </Link>
-                <Link href="#" className={styles.browseBtn}>
+                <Link href="/onboarding/step2" className={styles.browseBtn}>
                   Browse Courses
                 </Link>
               </div>
@@ -106,16 +138,6 @@ export default function Home() {
 
           {/* ===== Right White Panel ===== */}
           <div className={styles.rightPanel}>
-
-            {/* Sign Up / Login buttons - top right */}
-            <div className={`animate-fade-in ${styles.topRightButtons}`}>
-              <Link href="/onboarding/step2" className={styles.signUpBtn}>
-                Sign Up
-              </Link>
-              <Link href="/login" className={styles.loginBtn}>
-                Login
-              </Link>
-            </div>
 
             {/* Dashboard Image - centered */}
             <div className={styles.dashboardArea}>
@@ -130,7 +152,7 @@ export default function Home() {
                 />
 
                 {/* Student Avatar + 10k badge */}
-                <div className={`animate-fade-in-up delay-600 ${styles.studentBadge} animate-gentle-bounce loop-delay-600`}>
+                <div className={`animate-fade-in-up delay-600 ${styles.studentBadge}`}>
                   <div className={styles.avatarStack}>
                     <Image
                       src={`${ASSET_PATH}/Student avatar.png`}
