@@ -84,6 +84,13 @@
   @apply flex items-center gap-2;
 }
 
+/* Desktop: hide buttons inside blue panel, they appear in right panel */
+@media (min-width: 1024px) {
+  .blueNavButtons {
+    display: none;
+  }
+}
+
 .blueSignUpBtn {
   @apply px-4 py-1.5 rounded-full font-semibold transition-all duration-300;
   font-size: 12px;
@@ -206,12 +213,14 @@
 }
 
 .topRightButtons {
-  @apply flex items-center justify-end gap-3 mb-2;
+  /* Hidden on mobile — buttons live inside the blue panel there */
+  display: none;
 }
 
+/* Desktop: show in right panel */
 @media (min-width: 1024px) {
   .topRightButtons {
-    @apply mb-0;
+    @apply flex items-center justify-end gap-3 mb-0;
   }
 }
 

@@ -139,6 +139,16 @@ export default function Home() {
           {/* ===== Right White Panel ===== */}
           <div className={styles.rightPanel}>
 
+            {/* Sign Up / Login buttons - top right (desktop only) */}
+            <div className={`animate-fade-in ${styles.topRightButtons}`}>
+              <Link href="/onboarding/step2" className={styles.signUpBtn}>
+                Sign Up
+              </Link>
+              <Link href="/onboarding/step2" className={styles.loginBtn}>
+                Login
+              </Link>
+            </div>
+
             {/* Dashboard Image - centered */}
             <div className={styles.dashboardArea}>
               <div className={`animate-scale-in delay-400 ${styles.dashboardImageWrapper} animate-float`}>
