@@ -8,16 +8,16 @@
 
 .bgLogo {
   @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
-  opacity: 6%;
+  opacity: 4%;
 }
 
 .card {
-  @apply w-full max-w-xl text-center p-4 pb-10 rounded-2xl backdrop-blur-sm;
+  @apply w-full max-w-xl text-center py-4 px-10 rounded-2xl backdrop-blur-sm;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .card {
     @apply p-4 pb-10;
   }
@@ -58,4 +58,13 @@
   font-size: 16px;
   line-height: 24px;
   color: #0088FF;
+}
+
+.submitBtn {
+  @apply w-full flex justify-center items-center py-2 text-white text-center bg-[#1E3A8A] border border-transparent rounded-3xl shadow-sm text-lg font-medium transition duration-300;
+}
+
+.submitBtn:hover {
+  @apply bg-blue-900;
+  transform: scale(1.02);
 }

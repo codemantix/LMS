@@ -20,7 +20,7 @@
 
 .bgLogo {
   @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
-  opacity: 6%;
+  opacity: 4%;
 }
 
 .formWrapper {
@@ -34,7 +34,7 @@
 }
 
 .card {
-  @apply py-8 px-4 shadow rounded-lg backdrop-blur-sm;
+  @apply pb-1 px-4 shadow rounded-lg backdrop-blur-sm;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -87,13 +87,12 @@
   @apply appearance-none block w-full px-3 py-2 rounded-xl placeholder-gray-400 transition duration-300;
   height: 56px;
   border: 0.25px solid #C7C7CC;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .input:focus {
   @apply outline-none ring-indigo-500;
   border-color: #C7C7CC;
-  box-shadow: none;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .input:hover {
@@ -134,15 +133,15 @@
 }
 
 .forgotLink {
-  @apply text-sm text-indigo-600;
+  @apply text-sm text-[#35a2ff];
 }
 
 .forgotLink:hover {
-  @apply text-indigo-500;
+  @apply text-[#1e90ff];
 }
 
 .submitBtn {
-  @apply w-full flex justify-center items-center py-2 px-4 text-center border border-transparent rounded-3xl shadow-sm text-sm font-medium text-white bg-blue-800 transition duration-300;
+  @apply w-full flex justify-center items-center py-2 px-4 text-center border border-transparent rounded-3xl shadow-sm text-sm font-medium transition duration-300;
   height: 56px;
 }
 
@@ -186,6 +185,43 @@
   color: #1e90ff;
 }
 
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-family: var(--font-public-sans), sans-serif;
+  background-color: #1E3A8A0D;
+  color: #64748B;
+  height: 64px;
+  padding: 16px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  gap: -10px;
+}
+
+.avatars img {
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-right: -10px;
+}
+
+.footer p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 420px) {
+  .footer p {
+    margin-top: 0;
+  }
+}
 @media (max-width: 350px) {
   .rememberRow {
     @apply flex-col gap-4;

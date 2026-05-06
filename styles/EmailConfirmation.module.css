@@ -1,10 +1,10 @@
 .page {
-  @apply min-h-screen bg-white text-black flex items-center justify-center p-4;
+  @apply min-h-screen bg-white text-black flex items-center justify-center p-4 overflow-hidden;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .page {
-    @apply p-6;
+    @apply p-6 overflow-auto;
   }
 }
 
@@ -14,7 +14,7 @@
 
 .bgLogo {
   @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
-  opacity: 6%;
+  opacity: 4%;
 }
 
 .card {
@@ -71,7 +71,7 @@
 }
 
 .codeGrid {
-  @apply grid grid-cols-6 gap-2 mb-8;
+  @apply grid grid-cols-6 gap-2 mb-4;
 }
 
 @media (min-width: 768px) {
@@ -86,9 +86,9 @@
   border: 1px solid rgba(159, 155, 155, 0.36);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .codeInput {
-    height: 79px;
+    height: 30px;
     @apply text-2xl;
   }
 }
@@ -98,7 +98,7 @@
 }
 
 .resendSection {
-  @apply flex flex-col justify-center items-start gap-2 text-center mb-8;
+  @apply flex flex-col justify-center items-start gap-2 text-center mb-4;
 }
 
 @media (min-width: 640px) {
