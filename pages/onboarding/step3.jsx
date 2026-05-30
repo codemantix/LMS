@@ -26,7 +26,7 @@ const courses = [
   },
   {
     title: "UI/UX Design Fundamentals",
-    author: "Emma Wilson",
+    author: "UGWU DIAMOND",
     progress: 40,
     image: `${ASSET_PATH}/UX course image.png`,
     category: "Design",

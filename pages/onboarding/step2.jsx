@@ -7,8 +7,8 @@ import styles from "../../styles/Step2.module.css";
 
 const interests = [
   "Frontend",
-  "Data Science",
-  "UX Design",
+  "Backend",
+  "UX Design",  
   "Mobile Dev",
   "AI / ML",
   "Cybersecurity",

@@ -148,7 +148,7 @@ export default function Home() {
                 Login
               </Link>
             </div>
-
+                 
             {/* Dashboard Image - centered */}
             <div className={styles.dashboardArea}>
               <div className={`animate-scale-in delay-400 ${styles.dashboardImageWrapper} animate-float`}>
