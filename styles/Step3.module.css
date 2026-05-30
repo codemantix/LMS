@@ -30,7 +30,7 @@
 
 .subtitle {
   @apply text-xs text-center mb-4 max-w-md;
-  color: #475569;
+  color: purple;
 }
 
 /* Category Tabs */
