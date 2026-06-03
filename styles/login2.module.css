@@ -20,7 +20,7 @@
 
 .bgLogo {
   @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
-  opacity: 4%;
+  opacity: 6%;
 }
 
 .formWrapper {
@@ -34,7 +34,7 @@
 }
 
 .card {
-  @apply py-4 px-4 shadow rounded-lg backdrop-blur-sm;
+  @apply pb-1 px-4 shadow rounded-lg backdrop-blur-sm;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -93,7 +93,7 @@
 .input:focus {
   @apply outline-none ring-indigo-500;
   border-color: #C7C7CC;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 
 .input:hover {
@@ -134,11 +134,11 @@
 }
 
 .forgotLink {
-  @apply text-sm text-[#35a2ff];
+  @apply text-sm text-indigo-600;
 }
 
 .forgotLink:hover {
-  @apply text-[#1e90ff];
+  @apply text-indigo-500;
 }
 
 .submitBtn {

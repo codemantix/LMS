@@ -37,8 +37,8 @@ export default function VerificationSuccess() {
           <Image
             src="/assets/verification.png"
             alt="Verification Illustration"
-            width={300}
-            height={133.33}
+            width={500}
+            height={333.33}
           />
         </div>
 

@@ -1,11 +1,22 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/EmailConfirmation.module.css';
 
 // const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
 export default function EmailConfirmationPage() {
+  const router = useRouter();
+  const [nextRoute, setNextRoute] = useState("");
+
+  useEffect(() => {
+    if (nextRoute) {
+      router.push(nextRoute);
+    }
+  }, [nextRoute, router]);
+
   return (
     <div className={styles.page}>
       {/* Background logo / brand mark */}
@@ -85,6 +96,7 @@ export default function EmailConfirmationPage() {
           {/* Verify button */}
           <button
             type="button"
+            onClick={() => setNextRoute("/email-verification")}
             className={styles.verifyBtn}
           >
             Verify Email

@@ -1,14 +1,20 @@
 .page {
-  @apply min-h-screen bg-white flex items-center justify-center w-full overflow-hidden pt-4;
+  @apply h-screen bg-white flex items-center justify-center p-4 w-full overflow-y-auto;
+}
+
+@media (min-width: 768px) {
+  .page {
+    @apply p-6;
+  }
 }
 
 .card {
-  @apply px-6 max-w-2xl w-full text-center;
+  @apply p-4 max-w-[500px] w-full text-center;
 }
 
 @media (max-width: 768px) {
   .card {
-    @apply p-10;
+    @apply p-6;
   }
    .page {
     @apply p-6;
@@ -32,21 +38,32 @@
 }
 
 .title {
-  @apply font-semibold mb-2 text-black;
-  font-size: 2rem !important;
+  @apply font-semibold mb-3 text-black;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 18PX;
+  }
 }
 
 .subtitle {
-  @apply mb-4 font-normal text-lg leading-relaxed;
+  @apply mb-4 font-normal text-base leading-relaxed;
   color: #475569;
+  font-size: 14px;
 }
 
 .verificationImage {
-  @apply flex justify-center mb-4;
+  @apply flex justify-center mb-4 w-full px-4;
+}
+
+.verificationImage img {
+  /* @apply w-full h-auto max-w-full; */
 }
 
 .dashboardBtn {
-  @apply block w-full py-2 px-5 rounded-full text-white mb-4 cursor-pointer transition-all duration-300 ease-in-out;
+  @apply block w-full py-2 px-3 rounded-full text-white mb-2 cursor-pointer transition-all duration-300 ease-in-out;
   background-color: #1E3A8A;
   border: 1px solid #C6C6C8;
 }
@@ -55,7 +72,7 @@
   transform: scale(1.02)
 }
 .profileBtn {
-  @apply inline-flex items-center rounded-full py-2 px-5 w-full justify-center mb-4 transition-all duration-300 ease-in-out;
+  @apply inline-flex items-center rounded-full py-2 px-3 w-full justify-center mb-2 transition-all duration-300 ease-in-out;
   border: 1px solid #1E3A8A;
   color: #1E3A8A;
   cursor: pointer;

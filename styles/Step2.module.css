@@ -1,9 +1,15 @@
 .page {
-  @apply min-h-screen flex flex-col bg-white font-inter;
+  @apply min-h-screen flex flex-col bg-white font-inter overflow-x-hidden;
+}
+
+@media (min-width: 1024px) {
+  .page {
+    @apply h-screen overflow-hidden;
+  }
 }
 
 .main {
-  @apply flex-1 flex flex-col items-center px-4 py-8 w-full max-w-[870px] mx-auto;
+  @apply flex-1 flex flex-col items-center px-4 py-2 w-full max-w-[760px] mx-auto overflow-y-auto;
 }
 
 @media (min-width: 768px) {
@@ -13,23 +19,24 @@
 }
 
 .stepHeader {
-  @apply text-xs font-bold tracking-wider mb-3 text-center;
+  @apply text-xs font-bold tracking-wider mb-2 text-center;
   color: #1E3A8A;
 }
 
 .title {
-  @apply text-3xl font-bold font-montserrat mt-8 mb-2 text-center;
+  @apply text-xl font-bold font-montserrat mt-2 mb-1 text-center;
   color: #0F172A;
 }
 
 @media (min-width: 768px) {
   .title {
-    @apply text-4xl;
+    @apply text-2xl;
   }
 }
 
 .subtitle {
-  @apply text-sm text-gray-400 text-center mb-10 max-w-md;
+  @apply text-xs text-gray-400 text-center mb-3 max-w-md;
+
 }
 
 .sectionTitle {
@@ -44,7 +51,7 @@
 
 /* Interests */
 .interestsSection {
-  @apply w-full max-w-2xl mb-10;
+  @apply w-full max-w-2xl mb-3;
 }
 
 .interestsGrid {
@@ -74,7 +81,7 @@
 
 /* Learning Goals */
 .goalsSection {
-  @apply w-full max-w-2xl mb-12 mx-auto;
+  @apply w-full max-w-2xl mb-3 mx-auto;
 }
 
 .goalsGrid {
@@ -113,7 +120,7 @@
 }
 
 .goalLabel {
-  @apply text-3xl font-bold;
+  @apply text-xl font-bold;
   color: #1a1a2e;
 }
 
@@ -124,7 +131,7 @@
 
 /* Navigation */
 .navRow {
-  @apply flex items-center justify-between w-full max-w-[413px] mt-8 mb-8;
+  @apply flex items-center justify-between w-full max-w-[360px] mt-2 mb-2;
 }
 
 .backBtn {
@@ -136,13 +143,13 @@
 }
 
 .continueBtn {
-  @apply text-white text-sm font-bold transition flex items-center justify-center;
+  @apply text-white text-xs font-bold transition flex items-center justify-center;
   background-color: #1E3A8A;
-  width: 215px;
-  height: 56px;
+  width: 170px;
+  height: 42px;
   border-radius: 40px;
-  padding: 16px 20px;
-  gap: 10px;
+  padding: 10px 16px;
+  gap: 8px;
   border: 1px solid #1a1a6e;
 }
 

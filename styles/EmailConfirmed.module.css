@@ -1,5 +1,5 @@
 .page {
-  @apply min-h-screen bg-white flex items-center justify-center p-6;
+  @apply h-screen bg-white flex items-center justify-center p-4 overflow-y-auto;
 }
 
 .bgLogoWrapper {
@@ -12,14 +12,14 @@
 }
 
 .card {
-  @apply w-full max-w-xl text-center py-4 px-10 rounded-2xl backdrop-blur-sm;
+  @apply w-full max-w-xl text-center p-4 pb-6 rounded-2xl backdrop-blur-sm;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
   .card {
-    @apply p-4 pb-10;
+    @apply p-4 pb-8;
   }
 }
 
@@ -28,13 +28,13 @@
 }
 
 .title {
-  @apply font-bold text-black mb-4;
-  font-size: 30px;
+  @apply font-bold text-black mb-2;
+  font-size: 20px;
 }
 
 @media (min-width: 768px) {
   .title {
-    @apply text-4xl;
+    font-size: 26px;
   }
 }
 
@@ -43,13 +43,13 @@
 }
 
 .message {
-  @apply space-y-4 mb-4 w-full max-w-sm mx-auto px-4;
+  @apply space-y-2 mb-3 w-full max-w-sm mx-auto px-4;
 }
 
 .messageText {
   @apply font-normal;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 14px;
+  line-height: 22px;
   color: #000000;
 }
 

@@ -1,0 +1,357 @@
+.page {
+  @apply bg-white font-inter;
+  width: 1256px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  rotate: 0deg;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+/* ===== Navbar ===== */
+.nav {
+  @apply flex items-center px-4 py-4 bg-white border-b border-gray-100;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.logo {
+  @apply h-10 w-auto;
+}
+
+/* ===== Hero ===== */
+.hero {
+  @apply flex flex-col items-center text-center px-4 py-10;
+}
+
+.heroIconWrapper {
+  @apply flex items-center justify-center mb-5;
+  width: 110px;
+  height: 110px;
+  rotate: 0deg;
+  opacity: 1;
+  border-radius: 9999px;
+  padding: 32px;
+  border: 1px solid var(--brand-blue-10, #1E3A8A1A);
+  box-shadow: 0px 8px 10px -6px #0000001A, 0px 20px 25px -5px #0000001A;
+}
+
+.heroTitle {
+  @apply font-bold leading-tight mb-4;
+  font-size: 1.75rem;
+  color: #0F172A;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.heroSubtitle {
+  @apply leading-relaxed mb-6 max-w-md mx-auto;
+  font-size: 13px;
+  color: #64748B;
+}
+
+.heroBtns {
+  @apply flex items-center gap-3 flex-wrap justify-center;
+}
+
+.browseBtn {
+  @apply px-6 py-2.5 rounded-[50px] text-white text-sm font-semibold transition;
+  background-color: #1a1a6e;
+}
+
+.browseBtn:hover {
+  background-color: #14145a;
+}
+
+.enrollBtn {
+  @apply px-6 py-2.5 rounded-full text-sm font-semibold transition;
+  border: 2px solid #1a1a6e;
+  color: #1a1a6e;
+}
+
+.enrollBtn:hover {
+  background-color: #f0f4ff;
+}
+
+/* ===== Search ===== */
+.searchSection {
+  @apply px-4 pb-2;
+  width: 100%;
+
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .searchSection {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+.searchRow {
+  @apply flex;
+  width: 100%;
+  opacity: 1;
+  gap: 12px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .searchRow {
+    @apply flex-row items-center justify-between;
+  }
+}
+
+.searchInputWrapper {
+  @apply flex items-center bg-white border border-gray-200;
+  width: 625px;
+  height: 52px;
+  rotate: 0deg;
+  opacity: 1;
+  gap: 8px;
+  border-radius: 12px;
+  padding-top: 16px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+  padding-left: 8px;
+  border-width: 1px;
+}
+
+.searchInputWrapper input {
+  @apply flex-1 text-sm outline-none bg-transparent;
+  color: #475569;
+}
+
+.searchIconImage {
+  object-fit: contain;
+}
+
+.filterGroup {
+  @apply flex items-center gap-2 text-sm;
+  color: #475569;
+}
+
+.filterGroup select {
+  @apply border border-gray-200 rounded-lg px-3 py-1.5 text-sm outline-none;
+  color: #1E3A8A;
+}
+
+/* ===== Sections ===== */
+.section {
+  @apply px-4 py-3;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.sectionHeader {
+  @apply flex items-center justify-between mb-2;
+}
+
+.sectionTitle {
+  @apply font-bold mb-0.5;
+  font-size: 1.1rem;
+  color: #1E3A8A;
+}
+
+.sectionSubtitle {
+  font-size: 12px;
+  color: #2A2A2B;
+}
+
+.viewAllLink {
+  @apply text-sm font-medium whitespace-nowrap;
+  color: #1E3A8A;
+  align-self: center;
+}
+
+/* ===== Category Tabs ===== */
+.categoryTabs {
+  @apply flex flex-wrap justify-start;
+  width: 100%;
+  height: 70.65px;
+  rotate: 0deg;
+  opacity: 1;
+  gap: 13px;
+
+ 
+  
+  justify-content: space-between;
+}
+
+.categoryBtn {
+  @apply font-medium transition-all duration-300 border flex items-center justify-center;
+  font-size: 12px;
+  background: var(--brand-blue-course-content, #C5D4FE);
+  width: 100%;
+  height: 50.65px;
+  rotate: 0deg;
+  opacity: 1;
+  gap: 10px;
+  flex:1;
+  border-radius: 12px;
+}
+
+.categoryBtnActive {
+  composes: categoryBtn;
+  @apply shadow-md;
+  background: var(--brand-blue-course-content, #C5D4FE);
+  background: var(--brand-blue-course-content, #C5D4FE);
+  color:  #1E3A8A;
+}
+
+.categoryBtnInactive {
+  composes: categoryBtn;
+  color:  #1E3A8A;
+;
+  background: var(--brand-blue-course-content, #C5D4FE);
+  border: none;
+}
+.categoryBtnInactive:hover {
+  @apply border-gray-400 shadow-sm;
+}
+
+.categoryIconActive {
+  @apply brightness-0 invert;
+}
+
+/* ===== Feature Chips ===== */
+.featureChipsRow {
+   @apply flex flex-wrap justify-start;
+  width: 100%;
+  height: 70.65px;
+  rotate: 0deg;
+  opacity: 1;
+  gap: 13px;
+  
+  justify-content: space-between;
+}
+
+
+.featureChip {
+    @apply font-medium transition-all duration-300 border flex items-center justify-center;
+  font-size: 12px;
+  background: var(--brand-blue-5, #1E3A8A0D);
+  width: 100%;
+  height: 53.65px;
+  rotate: 0deg;
+  opacity: 1;
+  gap: 10px;
+  flex:1;
+  border-radius: 12px;
+  padding-top: 12px;
+  padding-right: 25px;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  /* margin-left: 2px; */
+}
+
+/* ===== Recommended Cards ===== */
+.recommendedGrid {
+  display: grid;
+  width: 100%;
+  opacity: 1;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 28px;
+  column-gap: 32px;
+}
+
+.courseCard {
+  @apply rounded-2xl border border-gray-200 overflow-hidden bg-white;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.courseCardImageWrapper {
+  @apply relative overflow-hidden;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.courseCardImage {
+  @apply transition-transform duration-300 w-full h-auto ;
+  
+}
+
+.courseCardBody {
+  width: 100%;
+  rotate: 0deg;
+  opacity: 1;
+  gap: 12px;
+  border-radius: 20px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.courseCardTitle {
+  @apply font-bold;
+  font-size: 16px;
+  color: #343131;
+}
+
+.courseCardDescStars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.courseCardDesc {
+  @apply leading-relaxed;
+  font-size: 13px;
+  color: #4A5565;
+  flex: 1;
+  margin: 0;
+}
+
+.courseCardStars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.courseCardFooter {
+  @apply flex items-center justify-between;
+  font-size: 11px;
+  color: #64748B;
+  margin-bottom: 6px;
+}
+
+.lessonsGroup {
+  @apply flex items-center gap-1;
+  margin-bottom: 6px;
+}
+
+.previewLink {
+  @apply font-semibold;
+  font-size: 12px;
+  color: #1E3A8A;
+}

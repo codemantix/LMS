@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import styles from '../styles/EmailConfirmed.module.css';
 
 export default function EmailConfirmedPage() {
+  useEffect(() => {
+    localStorage.setItem('lms_has_account', 'true');
+  }, []);
   return (
     <div className={styles.page}>
       {/* Background logo / brand mark */}

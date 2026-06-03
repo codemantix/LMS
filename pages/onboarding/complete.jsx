@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -9,6 +10,13 @@ const ASSET_PATH = "/Assets/codemantix resources/codemantix resources";
 
 export default function Complete() {
   const router = useRouter();
+  const [nextRoute, setNextRoute] = useState("");
+
+  useEffect(() => {
+    if (nextRoute) {
+      router.push(nextRoute);
+    }
+  }, [nextRoute, router]);
 
   return (
     <div className={styles.page}>
@@ -29,8 +37,8 @@ export default function Complete() {
               <Image
                 src={`${ASSET_PATH}/success icon.png`}
                 alt="Success"
-                width={80}
-                height={80}
+                width={50}
+                height={50}
                 className={styles.successImage}
               />
               <div className={styles.starRow}>
@@ -106,7 +114,7 @@ export default function Complete() {
           href="/signup"
           className={`${styles.dashboardBtn} animate-fade-in-up delay-500 animate-gentle-bounce loop-delay-800`}
         >
-          Go to Dashboard →
+          Continue to Sign Up →
         </Link>
 
         {/* Support Link */}
@@ -126,10 +134,10 @@ export default function Complete() {
             ← Back
           </button>
           <button
-            onClick={() => router.push("/signup")}
+            onClick={() => setNextRoute("/signup")}
             className={styles.nextBtn}
           >
-            Continue to Step 3 →
+            Continue to Sign Up →
           </button>
         </div>
       </main>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa';
 import Image from "next/image";
-import styles from "../styles/login.module.css";
+import styles from "../styles/login2.module.css";
 
 export default function LogInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,8 +13,6 @@ export default function LogInPage() {
     email: '',
     password: ''
   });
-
-  const isFilled = formData.email.trim() !== '' && formData.password.trim() !== '';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -119,7 +117,7 @@ export default function LogInPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
-                {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
+                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
               </button>
             </div>
 
@@ -133,20 +131,13 @@ export default function LogInPage() {
                 />
                 <span className={styles.rememberText}>Remember me</span>
               </label>
-              <Link href="/reset-password" className={styles.forgotLink}>
+              <Link href="/forgot-password" className={styles.forgotLink}>
                 Forgot your password?
               </Link>
             </div>
 
             <div>
-              <button 
-                type="submit" 
-                className={styles.submitBtn}
-                style={{ 
-                  backgroundColor: isFilled ? '#1E3A8A' : '#F1F1F2',
-                  color: isFilled ? 'white' : '#1E3A8A'
-                }}
-              >
+              <button type="submit" className={styles.submitBtn}>
                 Login
               </button>
             </div>
