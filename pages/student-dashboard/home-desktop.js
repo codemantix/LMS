@@ -1,11 +1,11 @@
 'use client';
 
-import styles from "../../styles/coursepage.module.css";
+import styles from "../../styles/homeDesktop.module.css";
 import Image from 'next/image';
 import { Inter, Montserrat } from 'next/font/google';
 import { useState, useRef, useEffect } from 'react';
 import Link from "next/link";
-import { Search, Home, SquareArrowRightExit, Settings, Puzzle, SquarePen, X, Heart, UserRound, LayoutGrid, ShoppingCart, Bell, BookOpen, GraduationCap, TrendingUp, Clock5, ArrowUpRight, Linkedin, Facebook, Instagram, Twitter, Star } from 'lucide-react';
+import { Search, X, Heart, UserRound, Puzzle, Settings, SquareArrowRightExit, SquarePen, Home, LayoutGrid, ShoppingCart, Bell, BookOpen, GraduationCap, TrendingUp, Clock5, ArrowUpRight, Linkedin, Facebook, Instagram, Twitter, Star } from 'lucide-react';
 
 const ASSET_PATH = '/assets/codemantix resources/codemantix resources';
 const assetPath = (filename) => encodeURI(`${ASSET_PATH}/${filename}`);
@@ -15,25 +15,43 @@ const montserrat = Montserrat({ subsets: ['latin'], weight: ['700'] });
 
 export default function CourseDesktop() {
 
-    // THE FUNCTION FOR MOBILE MORE OPEN AND CLOSE 
-    const [isMoreOpen, setMoreOpen] = useState(false)
+  // THE FUNCTION FOR MOBILE MORE OPEN AND CLOSE 
+  const [isMoreOpen, setMoreOpen] = useState(false)
   
   // THE MENU ACTIONS, DROP MENU AND HIDE 
   const [menuOpen, setMenuOpen] = useState(false)
   const [showProgressScreen, setShowProgressScreen] = useState(false)
-  const [activeItem, setActiveItem] = useState('Courses')
+  const [activeItem, setActiveItem] = useState('Home')
   const sidebarRef = useRef(null)
 
   const [query, setQuery] = useState('');
 
   const sidebarItems = [
-    { label: 'Home', icon: 'Home Icon.png', href: '/student-dashboard/home-desktop', },
-    { label: 'Courses', icon: 'Book icon.png' },
-    { label: 'Progress', icon: 'Progress icon.png' },
-    { label: 'Quizzes', icon: 'Quizzes icon.png' },
-    { label: 'Assignments', icon: 'Assignment icon.png' },
-  ];
-
+  {
+    label: 'Home',
+    icon: 'Home Icon.png',
+    href: '/student-dashboard/home-desktop',
+  },
+  {
+    label: 'Courses',
+    icon: 'Book icon.png',
+    href: '/student-dashboard/coursepage',
+  },
+  {
+    label: 'Progress',
+    icon: 'Progress icon.png',
+  },
+  {
+    label: 'Quizzes',
+    icon: 'Quizzes icon.png',
+    href: '/student-dashboard/quizzes',
+  },
+  {
+    label: 'Assignments',
+    icon: 'Assignment icon.png',
+    href: '/student-dashboard/assignments',
+  },
+];
   const settingsItems = [
     { label: 'Profile', icon: 'Profile Icon.png' },
     { label: 'Settings', icon: 'Settings icon.png' },
@@ -57,25 +75,25 @@ export default function CourseDesktop() {
     title: "Career and Freelancing", 
     description: "This course is focused on helping and giving  users insights to start and grow in their tech careers",
     progress: 69, 
-    image: assetPath('career image.png')  
+    image: assetPath('UX course image.png')  
   },
   { 
     title: "Software Engineering", 
     description: "This  beginner-friendly course is focused on learning data analytics and technical tools  from scratch",
     progress: 69, 
-     image: assetPath('data image.png')  
+     image: assetPath('graphics design course image.png')  
   },
   { 
     title: "Data and Technology", 
     description: "This  beginner-friendly course is focused on learning data analytics and technical tools  from scratch",
     progress: 69, 
-    image: assetPath('graphics image.png') 
+    image: assetPath('data anlysus course image.png') 
   },
   { 
     title: "Business and Digital Systems", 
     description: "This  course is designed for business owners and professionals to help them learn website mang.",
     progress: 69, 
-    image: assetPath('business image.png') 
+    image: assetPath('data anlysus course image.png') 
   },
 ];
 
@@ -120,35 +138,37 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
             />
           </div>
 
-           <nav className={styles.nav}>
-           {sidebarItems.map((item) =>
-            item.href ? (
-           <Link
-           key={item.label}
-           href={item.href}
-           className={`${styles.navItem} ${
-           item.label === activeItem ? styles.navActive : ''
-         }`}
-           onClick={() => {
-           setActiveItem(item.label);
-           setMenuOpen(false);
+         <nav className={styles.nav}>
+  {sidebarItems.map((item) =>
+    item.href ? (
+      <Link
+        key={item.label}
+        href={item.href}
+        className={`${styles.navItem} ${
+          item.label === activeItem ? styles.navActive : ''
+        }`}
+        onClick={() => {
+          setActiveItem(item.label);
+          setMenuOpen(false);
         }}
       >
-          <span className={styles.navIcon}>
+        <span className={styles.navIcon}>
           <Image
             src={assetPath(item.icon)}
             alt={`${item.label} icon`}
             width={18}
             height={18}
           />
-          </span>
-          {item.label}
-        </Link>
-      ) : (
+        </span>
+        {item.label}
+      </Link>
+    ) : (
       <button
         key={item.label}
         type="button"
-        className={`${styles.navItem} ${ item.label === activeItem ? styles.navActive : ''}`}
+        className={`${styles.navItem} ${
+          item.label === activeItem ? styles.navActive : ''
+        }`}
         onClick={() => {
           setActiveItem(item.label);
 
@@ -170,7 +190,7 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
       </button>
     )
   )}
-      </nav>
+</nav>
 
           <div className={styles.frame}>
             <h2 className={styles.setting}>Settings</h2>
@@ -197,9 +217,7 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
             <X size={34} />
           </button>
         </aside>
-        <div className={styles.sidebarlinecontainer}>
-           <div className={styles.sidebarline}></div>
-        </div>
+
         <section className={styles.shell}>
           <div className={styles.navbarContainer}>
             <nav className={styles.navbar}>
@@ -217,13 +235,13 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
                 <div className={styles.notification}>
                   <div className={styles.hide}>
                     <Image   src={assetPath('codemantix logo png 3.png')} alt="logo" width={100} height={64} />
-                  </div>
-                 <div className={styles.notificationIconContainer}>
-                   <Heart className={styles.notificationIcon} />
+                   </div>
+                  <div className={styles.notificationIconContainer}>
+                    <Heart className={styles.notificationIcon} />
                   <ShoppingCart className={styles.notificationIcon} />
                   <Bell className={styles.notificationIcon} />
                   <Search size={18} className={styles.hide} />
-                 </div>
+                  </div>
                 </div>
                 <div className={styles.profile}>
                   <Image
@@ -290,63 +308,153 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
 
             <div className={styles.greeting}>
               <p className={`${styles.welcome} ${montserrat.className}`}>
-                Good Morning,<br />John Doe
+                Good Morning, John<br />Doe
               </p>
               <p className={styles.date}>{formattedDate}</p>
             </div>
 
-            {/* THE BEGINING OF THE COURSE SECTION  */}
+            <div className={styles.dashboardGrid}>
+              <div className={styles.leftColumn}>
+                <div className={styles.cardContainer}>
+                  <div className={styles.cardCopy}>
+                    <h2 className={`${montserrat.className} ${styles.cardTitle}`}>
+                      New Courses Available Now!
+                    </h2>
+                    <p className={styles.cardDescription}>
+                      Explore our latest courses and gain practical skills in tech, design, and digital innovation.
+                    </p>
+                    <button className={styles.exploreButton}>Explore Now</button>
+                  </div>
+                  <div className={styles.heroImageWrap}>
+                    <Image
+                      src={assetPath('Cad-boy.png')}
+                      alt="Course illustration"
+                     width={219}
+                     height={329}
+                      priority
+                      className={styles.heroImage}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.cardList}>
+                  <div className={styles.cardListItem}>
+                    <BookOpen className={`${styles.cardIcon} ${styles.blue}`} />
+                    <p className={styles.cardlistName}>Total Courses</p>
+                    <span className={`${styles.cardNumber} ${montserrat.className}`}>1</span>
+                  </div>
+                  <div className={styles.cardListItem}>
+                    <GraduationCap className={`${styles.cardIcon} ${styles.green}`} />
+                    <p className={styles.cardlistName}>Completed</p>
+                    <span className={`${styles.cardNumber} ${montserrat.className}`}>0</span>
+                  </div>
+                  <div className={styles.cardListItem}>
+                    <TrendingUp className={`${styles.cardIcon} ${styles.orange}`} />
+                    <p className={styles.cardlistName}>In Progress</p>
+                    <span className={`${styles.cardNumber} ${montserrat.className}`}>1</span>
+                  </div>
+                  <div className={styles.cardListItem}>
+                    <Clock5 className={`${styles.cardIcon} ${styles.grey}`} />
+                    <p className={styles.cardlistName}>Learning Hours</p>
+                    <span className={`${styles.cardNumber} ${montserrat.className}`}>0</span>
+                  </div>
+                </div>
+
                 <div className={styles.courseSection}>
-                 <h2 className={`${styles.pageTitle} ${montserrat.className}`}>My Courses</h2>
-                 <div className={styles.courseGrid}>
-  {courses.map((course, i) => (
-    <div key={i} className={styles.courseCard}>
-      <div className={styles.cardImage}>
-        <span className={styles.beginnerBadge}>Beginner</span>
-        <Image 
-          src={course.image} 
-          alt={course.title} 
-          fill 
-          className={styles.cardImg} 
-        />
-      </div>
+                  <div className={styles.sectionRow}>
+                    <h2 className={`${styles.pageTitle} ${montserrat.className}`}>My Courses</h2>
+                    <button className={styles.seeAllBtn}>See All</button>
+                  </div>
 
-      <div className={styles.cardBody}>
-        <div className={styles.courseHeader}>
-          <div className={styles.progressWrapper}>
-            <div
-              className={styles.progressCircle}
-              style={{
-                background: `conic-gradient(#41e0a0 ${course.progress}%, #d8f0ea ${course.progress}% )`,
-              }}
-            >
-              <div className={styles.progressInner}>{course.progress}%</div>
+                  <div className={styles.courseGrid}>
+                    <div className={styles.courseCard}>
+                      <div className={styles.cardImage}>
+                        <p className={styles.beginnerBadge}>Beginner</p>
+                        <Image src={featuredCourse.image} alt={featuredCourse.title} fill className={styles.cardImg} />
+                      </div>
+                      <div className={styles.cardBody}>
+                        <div className={styles.courseHeader}>
+                          <div className={styles.progressWrapper}>
+                            <div
+                              className={styles.progressCircle}
+                              style={{
+                                background: `conic-gradient(#41e0a0 ${featuredCourse.progress}%, #d8f0ea ${featuredCourse.progress}% )`,
+                              }}
+                            >
+                              <div className={styles.progressInner}>{featuredCourse.progress}%</div>
+                            </div>
+                          </div>
+                          <div className={styles.courseText}>
+                            <h3 className={`${styles.courseTitle} ${montserrat.className}`}>{featuredCourse.title}</h3>
+                            <p className={styles.courseDescription}>{featuredCourse.description}</p>
+                            <div className={styles.ratingRow} aria-label="Course rating">
+                              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
+                              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
+                              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
+                              <Star className={styles.starMuted} />
+                              <Star className={styles.starMuted} />
+                            </div>
+                          </div>
+                        </div>
+
+                        <button className={styles.continueBtn}>Continue Learning</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <aside className={styles.rightRail}>
+                <div className={styles.assignmentsCard}>
+                  <div className={styles.smallCardHeader}>
+                    <h3 className={styles.railTitle}>Assignments</h3>
+                  </div>
+                  <div className={styles.emptyState}>No Assignments !</div>
+                </div>
+
+                <div className={styles.trendCard}>
+                     <div className={styles.tradContainer}>
+                       <h3 className={styles.railTitle}>Your Learning Trend <TrendingUp /></h3>
+                  <div className={styles.chartLegend}>
+                    <span><i className={styles.legendDotLilac} />Completed</span>
+                    <span><i className={styles.legendDotBlue} />In Progress</span>
+                  </div>
+
+                  <div className={styles.chartArea}>
+                    <div className={styles.chartAxistContainer}>
+                      <p className={styles.points}>Points</p>
+                    <div className={styles.chartAxis}>
+                      <span>300</span>
+                      <span>200</span>
+                      <span>150</span>
+                      <span>100</span>
+                      <span>50</span>
+                      <span>0</span>
+                      </div>
+                    </div>
+
+                    <div className={styles.chartBars}>
+                      {trendBars.map((bar) => (
+                        <div key={bar.label} className={styles.chartGroup}>
+                          <div className={styles.barPair}>
+                            <div className={styles.barTrack}>
+                              <div className={styles.barInProgress} style={{ height: `${bar.inProgress}%` }} />
+                            </div>
+                            <div className={styles.barTrack}>
+                              <div className={styles.barCompleted} style={{ height: `${bar.completed}%` }} />
+                            </div>
+                          </div>
+                          <span className={styles.chartLabel}>{bar.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <p className={styles.pointWeek}>Weeks</p>
+                     </div>
+                  <div className={styles.viewAllTrend}>View All <ArrowUpRight size={14} /></div>
+                </div>
+              </aside>
             </div>
-          </div>
-
-          <div className={styles.courseText}>
-            <h3 className={`${styles.courseTitle} ${montserrat.className}`}>
-              {course.title}
-            </h3>
-            <p className={styles.courseDescription}>{course.description}</p>
-
-            <div className={styles.ratingRow}>
-              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
-              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
-              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
-              <Star className={styles.star} fill="#f7c948" color="#f7c948" />
-              <Star className={styles.starMuted} />
-            </div>
-          </div>
-        </div>
-
-        <button className={styles.continueBtn}>Continue Learning</button>
-      </div>
-    </div>
-  ))}
-</div>
-                 </div>
-
           </div>
         </section>
       </div>
@@ -374,7 +482,7 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
           <div className={styles.footerLinksGrid}>
             <div className={styles.footerColumn}>
               <h3 className={styles.footerHeading}>Quick Links:</h3>
-              <Link href="/student-dashboard/home-desktop">Home</Link>
+              <a href="#">Home</a>
               <a href="#">Courses</a>
               <a href="#">Knowledge Base</a>
               <a href="#">About Us</a>
@@ -398,16 +506,16 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
 
         <div className={styles.footerBottom}>All Rights Reserved {new Date() .getFullYear()}</div>
       </footer>
-      {/* Bottom Navigation - Mobile Only */}
-       <div className={styles.mainBottomContainer}>
+        {/* Bottom Navigation - Mobile Only */}
+     <div className={styles.mainBottomContainer}>
        <div className={styles.bottomNav}>
-      <Link href='#' className={`${styles.bottomNavItem} ${activeItem === 'Home' ? styles.active : ''}`}>
+      <Link href='#' className={styles.bottomNavItem}>
     <UserRound size={24} className={styles.bottomIcon} />
   </Link>
-  <Link href='/student-dashboard/home-desktop' className={`${styles.bottomNavItem}`}>
+  <Link href='/student-dashboard/home-desktop' className={`${styles.bottomNavItem} ${activeItem === 'Home' ? styles.active : ''}`}>
    <Home size={24} className={styles.bottomIcon} />
   </Link>
-  <Link href='/student-dashboard/coursepage' className={`${styles.bottomNavItem} ${activeItem === 'Courses' ? styles.active : ''}`}>
+  <Link href='/student-dashboard/coursepage' className={styles.bottomNavItem}>
    <BookOpen size={24} className={styles.bottomIcon} />
   </Link>
   <button onClick={() => setMoreOpen(true)} className={styles.bottomNavItem}>
