@@ -38,8 +38,8 @@ export default function EmailConfirmedPage() {
             <Image
               src="/assets/thurmb-up.png"
               alt="Thumbs Up icon"
-              width={236}
-              height={236}
+              width={136}
+              height={136}
             />
           </div>
 
@@ -51,7 +51,10 @@ export default function EmailConfirmedPage() {
               You can now login to the application.
             </p>
           </div>
-
+          {/* {Continue to reset password} */}
+          <Link href="/incorrect-password" className={styles.submitBtn}>
+            Continue to reset password
+          </Link>
           {/* Back to login link */}
           <Link href="/login" className={styles.backLink}>
             <ArrowLeft />

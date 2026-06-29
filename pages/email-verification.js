@@ -20,8 +20,8 @@ export default function VerificationSuccess() {
           <Image
             src="/assets/Container.png"
             alt="Verification image"
-            width={128}
-            height={128}
+            width={70}
+            height={70}
           />
         </div>
 
@@ -37,8 +37,8 @@ export default function VerificationSuccess() {
           <Image
             src="/assets/verification.png"
             alt="Verification Illustration"
-            width={300}
-            height={250}
+            width={500}
+            height={333.33}
           />
         </div>
 

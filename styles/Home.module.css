@@ -6,6 +6,22 @@
   .page {
     @apply h-screen overflow-hidden;
   }
+
+   .heroInner {
+    @apply flex-row h-full overflow-hidden;
+  }
+
+   .leftPanel {
+    @apply w-[55%] pb-4 self-stretch;
+    min-height: unset;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-bottom-right-radius: 80px;
+  }
+
+    .logoWrapper {
+    @apply mb-4;
+  }
 }
 
 .heroSection {
@@ -14,12 +30,6 @@
 
 .heroInner {
   @apply flex flex-col;
-}
-
-@media (min-width: 1024px) {
-  .heroInner {
-    @apply flex-row h-full overflow-hidden;
-  }
 }
 
 /* Left Panel */
@@ -37,16 +47,6 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .leftPanel {
-    @apply w-[55%] pb-4 self-stretch;
-    min-height: unset;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    border-bottom-right-radius: 80px;
-  }
-}
-
 .bgImage {
   @apply object-cover -z-0;
 }
@@ -61,12 +61,6 @@
 
 .logoWrapper {
   @apply flex items-center gap-2.5 mb-3;
-}
-
-@media (min-width: 1024px) {
-  .logoWrapper {
-    @apply mb-4;
-  }
 }
 
 /* Panel top bar: logo left + nav buttons right */
@@ -213,7 +207,6 @@
 }
 
 .topRightButtons {
-  /* Hidden on mobile — buttons live inside the blue panel there */
   display: none;
 }
 

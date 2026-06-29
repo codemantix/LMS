@@ -14,7 +14,7 @@
 
 .bgLogo {
   @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
-  opacity: 6%;
+  opacity: 4%;
 }
 
 .card {

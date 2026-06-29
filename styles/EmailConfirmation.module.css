@@ -2,9 +2,9 @@
   @apply h-screen bg-white text-black flex items-center justify-center p-4 overflow-y-auto;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .page {
-    @apply p-6;
+    @apply p-6 overflow-auto;
   }
 }
 
@@ -14,7 +14,7 @@
 
 .bgLogo {
   @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
-  opacity: 6%;
+  opacity: 4%;
 }
 
 .card {
@@ -86,7 +86,7 @@
   border: 1px solid rgba(159, 155, 155, 0.36);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .codeInput {
     height: 54px;
     @apply text-xl;

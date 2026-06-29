@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa';
 import Image from "next/image";
-import styles from "../styles/Login.module.css";
+import styles from "../styles/login.module.css";
 
 export default function LogInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +13,8 @@ export default function LogInPage() {
     email: '',
     password: ''
   });
+
+  const isFilled = formData.email.trim() !== '' && formData.password.trim() !== '';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -117,7 +119,7 @@ export default function LogInPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
-                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+                {showPassword ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
               </button>
             </div>
 
@@ -131,13 +133,20 @@ export default function LogInPage() {
                 />
                 <span className={styles.rememberText}>Remember me</span>
               </label>
-              <Link href="/forgot-password" className={styles.forgotLink}>
+              <Link href="/reset-password" className={styles.forgotLink}>
                 Forgot your password?
               </Link>
             </div>
 
             <div>
-              <button type="submit" className={styles.submitBtn}>
+              <button 
+                type="submit" 
+                className={styles.submitBtn}
+                style={{ 
+                  backgroundColor: isFilled ? '#1E3A8A' : '#F1F1F2',
+                  color: isFilled ? 'white' : '#1E3A8A'
+                }}
+              >
                 Login
               </button>
             </div>
@@ -163,6 +172,31 @@ export default function LogInPage() {
               Register
             </Link>
           </p>
+          {/* THE AVATAR  */}
+          <div className={styles.footer}>
+          <div className={styles.avatars}>
+          <Image
+           src="/assets/codemantix%20resources/codemantix%20resources/Avata.png"
+           alt="Avata"
+           width={34}
+           height={34}
+           />
+           <Image
+           src="/assets/codemantix%20resources/codemantix%20resources/Avata%201.png"
+           alt="Avata"
+           width={34}
+           height={34}
+           />
+           <Image
+           src="/assets/codemantix%20resources/codemantix%20resources/Avata%202.png"
+           alt="Avata"
+           width={34}
+           height={34}
+           />
+          </div>
+          <p>Joined by 10k+ students this week</p>
+        </div>
+          {/* THE END OF AVATAR  */}
         </div>
       </div>
     </div>
