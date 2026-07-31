@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa';
 import Image from "next/image";
-import styles from "../styles/login.module.css";
+import styles from "../styles/Login.module.css";
 
 export default function LogInPage() {
   const [showPassword, setShowPassword] = useState(false);
