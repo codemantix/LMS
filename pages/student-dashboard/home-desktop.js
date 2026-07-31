@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from "next/link";
 import { Search, X, Heart, UserRound, Puzzle, Settings, SquareArrowRightExit, SquarePen, Home, LayoutGrid, ShoppingCart, Bell, BookOpen, GraduationCap, TrendingUp, Clock5, ArrowUpRight, Linkedin, Facebook, Instagram, Twitter, Star } from 'lucide-react';
 
-const ASSET_PATH = '/assets/codemantix resources/codemantix resources';
+const ASSET_PATH = '/Assets/codemantix resources/codemantix resources';
 const assetPath = (filename) => encodeURI(`${ASSET_PATH}/${filename}`);
 
 const inter = Inter({ subsets: ['latin'] });
@@ -329,9 +329,10 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
                     <Image
                       src={assetPath('Cad-boy.png')}
                       alt="Course illustration"
-                     width={219}
-                     height={329}
+                      width={219}
+                      height={329}
                       priority
+                      sizes="(max-width: 768px) 100vw, 219px"
                       className={styles.heroImage}
                     />
                   </div>
@@ -370,7 +371,13 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
                     <div className={styles.courseCard}>
                       <div className={styles.cardImage}>
                         <p className={styles.beginnerBadge}>Beginner</p>
-                        <Image src={featuredCourse.image} alt={featuredCourse.title} fill className={styles.cardImg} />
+                        <Image
+                          src={featuredCourse.image}
+                          alt={featuredCourse.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 350px"
+                          className={styles.cardImg}
+                        />
                       </div>
                       <div className={styles.cardBody}>
                         <div className={styles.courseHeader}>
