@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from 'react';
 import Link from "next/link";
 import { Search, Home, SquareArrowRightExit, Settings, Puzzle, SquarePen, X, Heart, UserRound, LayoutGrid, ShoppingCart, Bell, BookOpen, GraduationCap, TrendingUp, Clock5, ArrowUpRight, Linkedin, Facebook, Instagram, Twitter, Star } from 'lucide-react';
 
-const ASSET_PATH = '/assets/codemantix resources/codemantix resources';
+const ASSET_PATH = '/Assets/codemantix resources/codemantix resources';
 const assetPath = (filename) => encodeURI(`${ASSET_PATH}/${filename}`);
 
 const inter = Inter({ subsets: ['latin'] });
@@ -303,11 +303,12 @@ const formattedDate = `${day}${getOrdinal(day)} ${currentDate.toLocaleString(
     <div key={i} className={styles.courseCard}>
       <div className={styles.cardImage}>
         <span className={styles.beginnerBadge}>Beginner</span>
-        <Image 
-          src={course.image} 
-          alt={course.title} 
-          fill 
-          className={styles.cardImg} 
+        <Image
+          src={course.image}
+          alt={course.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 350px"
+          className={styles.cardImg}
         />
       </div>
 
