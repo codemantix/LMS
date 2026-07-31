@@ -1,0 +1,182 @@
+.page {
+  @apply min-h-screen flex items-center justify-center relative overflow-x-hidden px-4 py-4;
+  background-color: #F8F9FA;
+}
+
+@media (min-width: 1024px) {
+  .page {
+    @apply h-screen overflow-hidden py-0;
+  }
+}
+
+.bgWatermark {
+  @apply absolute pointer-events-none hidden;
+}
+
+@media (min-width: 768px) {
+  .bgWatermark {
+    @apply block;
+  }
+}
+
+.bgWatermarkImage {
+  @apply w-full h-full object-contain;
+}
+
+.card {
+  @apply relative z-10 flex flex-col items-center w-full max-w-[480px];
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0px 7px 15px 0px #00000012;
+  backdrop-filter: blur(30px);
+  margin: 0;
+  gap: 10px;
+}
+
+.cardInner {
+  @apply w-full;
+  max-width: 420px;
+}
+
+.logoCenter {
+  @apply flex justify-center mb-1;
+}
+
+.logoLink {
+  @apply flex items-center gap-2;
+}
+
+.title {
+  @apply font-montserrat font-bold text-center mb-0.5;
+  font-size: 18px;
+  color: #000000;
+}
+
+.subtitle {
+  @apply text-center mb-2;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.form {
+  @apply space-y-2;
+}
+
+.input {
+  @apply w-full px-4 border rounded-xl text-sm text-gray-700 transition bg-white;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-color: #E2E8F0;
+}
+
+.input::placeholder {
+  @apply text-gray-400;
+}
+
+.input:focus {
+  @apply outline-none;
+  border-color: #1a1a6e;
+}
+
+.passwordWrapper {
+  @apply relative;
+}
+
+.inputPassword {
+  composes: input;
+  @apply pr-12;
+}
+
+.eyeButton {
+  @apply absolute right-4 top-1/2 -translate-y-1/2 text-gray-400;
+}
+
+.eyeButton:hover {
+  @apply text-gray-600;
+}
+
+.eyeIcon {
+  @apply w-5 h-5;
+}
+
+.passwordError {
+  @apply flex items-center justify-center gap-2 font-inter;
+}
+
+.termsRow {
+  @apply flex items-start gap-3 pt-1;
+}
+
+.termsCheckbox {
+  @apply mt-0.5 w-5 h-5 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition;
+}
+
+.termsCheckboxUnchecked {
+  composes: termsCheckbox;
+  @apply border-gray-300 bg-white;
+}
+
+.termsCheckboxChecked {
+  composes: termsCheckbox;
+  border-color: #1a1a6e;
+  background-color: #1a1a6e;
+}
+
+.checkIcon {
+  @apply w-3 h-3 text-white;
+}
+
+.termsText {
+  @apply text-gray-500;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.termsLink {
+  @apply underline font-medium;
+  color: #0088FF;
+}
+
+.submitBtn {
+  @apply w-full text-white font-inter font-semibold rounded-full transition mt-2;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 13px;
+  background-color: #1E3A8A;
+}
+
+.submitBtn:hover {
+  background-color: #1E3A8A;
+}
+
+.socialSection {
+  @apply mt-2 space-y-2;
+}
+
+.socialBtn {
+  @apply w-full py-2 border border-gray-200 rounded-full flex items-center justify-center gap-2 transition;
+  color: #1E3A8A;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.socialBtn:hover {
+  @apply bg-gray-50;
+}
+
+.loginText {
+  @apply text-center text-sm mt-2;
+  color: #000000;
+}
+
+.loginLink {
+  @apply font-inter;
+  color: #0088FF;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.loginLink:hover {
+  @apply underline;
+}

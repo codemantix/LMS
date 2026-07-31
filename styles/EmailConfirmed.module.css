@@ -1,0 +1,70 @@
+.page {
+  @apply h-screen bg-white flex items-center justify-center p-4 overflow-y-auto;
+}
+
+.bgLogoWrapper {
+  @apply flex justify-center items-center fixed inset-0 m-auto;
+}
+
+.bgLogo {
+  @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
+  opacity: 4%;
+}
+
+.card {
+  @apply w-full max-w-xl text-center p-4 pb-6 rounded-2xl backdrop-blur-sm;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .card {
+    @apply p-4 pb-8;
+  }
+}
+
+.logoSection {
+  @apply flex justify-center items-center flex-col;
+}
+
+.title {
+  @apply font-bold text-black mb-2;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 26px;
+  }
+}
+
+.thumbsUp {
+  @apply flex justify-center;
+}
+
+.message {
+  @apply space-y-2 mb-3 w-full max-w-sm mx-auto px-4;
+}
+
+.messageText {
+  @apply font-normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.backLink {
+  @apply inline-flex items-center gap-2 px-8 py-4 font-normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0088FF;
+}
+
+.submitBtn {
+  @apply w-full flex justify-center items-center py-2 text-white text-center bg-[#1E3A8A] border border-transparent rounded-3xl shadow-sm text-lg font-medium transition duration-300;
+}
+
+.submitBtn:hover {
+  @apply bg-blue-900;
+  transform: scale(1.02);
+}

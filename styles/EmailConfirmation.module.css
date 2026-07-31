@@ -1,0 +1,176 @@
+.page {
+  @apply h-screen bg-white text-black flex items-center justify-center p-4 overflow-y-auto;
+}
+
+@media (max-width: 768px) {
+  .page {
+    @apply p-6 overflow-auto;
+  }
+}
+
+.bgLogoWrapper {
+  @apply flex justify-center items-center fixed inset-0 m-auto;
+}
+
+.bgLogo {
+  @apply pointer-events-none select-none absolute inset-0 m-auto w-screen h-screen object-cover;
+  opacity: 4%;
+}
+
+.card {
+  @apply w-full max-w-[480px] shadow-lg px-4 pb-4 rounded-2xl backdrop-blur-sm;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) {
+  .card {
+    @apply px-6;
+  }
+}
+
+.logoCenter {
+  @apply flex flex-col items-center;
+}
+
+.headerSection {
+  @apply text-center mb-1;
+}
+
+.title {
+  @apply font-bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.subtitle {
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.emailRow {
+  @apply flex items-start justify-between font-medium gap-4 mb-3;
+  line-height: 20px;
+}
+
+.emailDisplay {
+  @apply flex items-center gap-2 justify-center;
+}
+
+.emailText {
+  @apply font-medium bg-gray-100;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.emailHint {
+  @apply font-medium;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.codeGrid {
+  @apply grid grid-cols-6 gap-2 mb-4;
+}
+
+@media (min-width: 768px) {
+  .codeGrid {
+    @apply gap-2;
+  }
+}
+
+.codeInput {
+  @apply text-center text-base font-bold rounded-lg outline-none transition-all;
+  height: 46px;
+  border: 1px solid rgba(159, 155, 155, 0.36);
+}
+
+@media (max-width: 768px) {
+  .codeInput {
+    height: 54px;
+    @apply text-xl;
+  }
+}
+
+.codeInput:focus {
+  @apply border-[#1E3A8A] ring-1 ring-cyan-500;
+}
+
+.resendSection {
+  @apply flex flex-col justify-center items-start gap-1 text-center mb-3;
+}
+
+@media (min-width: 640px) {
+  .resendSection {
+    @apply flex-row;
+  }
+}
+
+.resendText {
+  @apply font-medium mb-1;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.resendBtn {
+  @apply inline-flex items-center gap-2 transition-colors;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.resendBtn:hover {
+  @apply text-black;
+}
+
+.verifyBtn {
+  @apply w-full py-2.5 rounded-xl font-semibold text-white text-base transition-all duration-500 ease-in-out;
+  background-color: #1E3A8A;
+  box-shadow: 0 6px 10px -3px rgba(0, 0, 0, 0.3);
+}
+
+.verifyBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+.bottomLinks {
+  @apply flex flex-col items-center justify-center gap-2 mt-3 text-sm;
+}
+
+@media (max-width: 640px) {
+  .bottomLinks {
+    @apply flex-row;
+  }
+  .resendSection {
+    @apply flex-row;
+  }
+  .emailRow {
+    @apply flex-col items-center gap-2;
+  }
+  .emailHint {
+    @apply text-center;
+  }
+}
+
+@media (max-width: 406px) {
+  .resendSection {
+    @apply flex-col items-center gap-1
+  }
+}
+.backLink {
+  @apply flex items-center gap-2 font-medium transition-colors;
+  color: #0088FF;
+  line-height: 24px;
+}
+
+.supportLink {
+  @apply transition-colors;
+  color: #64748B;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}

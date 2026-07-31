@@ -1,0 +1,76 @@
+.logo {
+  @apply h-10 w-auto;
+}
+
+.nav {
+  @apply flex items-center justify-between px-4 py-4 bg-white font-inter;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.navOnboarding {
+  @apply flex items-center justify-between px-4 py-4 bg-white border-b border-gray-100 font-inter;
+}
+
+@media (min-width: 768px) {
+  .navOnboarding {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.onboardingActions {
+  @apply flex items-center gap-4;
+}
+
+.saveExitBtn {
+  @apply text-sm font-medium;
+  color: #64748B;
+}
+
+.saveExitBtn:hover {
+  @apply text-gray-700;
+}
+
+.skipLink {
+  @apply px-5 py-2 text-sm font-semibold font-inter transition;
+  border: 2px solid #1E3A8A;
+  color: #1E3A8A;
+  border-radius: 50px;
+}
+
+.skipLink:hover {
+  @apply bg-gray-50;
+}
+
+.landingActions {
+  @apply flex items-center gap-3;
+}
+
+.signUpBtn {
+  @apply px-6 text-white rounded-full text-sm font-semibold transition;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  background-color: #1a1a6e;
+}
+
+.signUpBtn:hover {
+  background-color: #14145a;
+}
+
+.loginBtn {
+  @apply px-6 rounded-full text-sm font-semibold transition;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  border: 2px solid #1a1a6e;
+  color: #1a1a6e;
+}
+
+.loginBtn:hover {
+  @apply bg-gray-50;
+}

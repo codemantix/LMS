@@ -1,0 +1,28 @@
+.wrapper {
+  @apply flex flex-col items-center gap-2;
+}
+
+.dotsRow {
+  @apply flex items-center gap-2;
+}
+
+.dot {
+  @apply h-1.5 rounded-full transition-all w-16;
+}
+
+.dotCompleted {
+  background-color: #E2E8F0;
+}
+
+.dotActive {
+  background-color: #1E3A8A;
+}
+
+.dotInactive {
+  @apply bg-gray-200;
+}
+
+.subtitle {
+  @apply text-sm mt-1;
+  color: #475569;
+}
